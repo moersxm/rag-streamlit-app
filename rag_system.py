@@ -8,15 +8,15 @@ from typing import List, Dict, Any
 import time
 import streamlit as st  # 添加streamlit导入
 
-from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
-
 class RAGSystem:
     def __init__(self, vector_db_path: str):
         """初始化RAG系统"""
         try:
             self.vector_db_path = vector_db_path
             print(f"尝试从{vector_db_path}加载向量数据库")
+            
+            # 初始化模型相关属性
+            self.model = "ernie-3.5-8k"  # 默认使用文心一言3.5
             
             # 检查向量数据库路径是否存在
             if not os.path.exists(vector_db_path):
@@ -30,15 +30,10 @@ class RAGSystem:
                 print(f"警告: FAISS索引文件不存在: {faiss_path}")
                 self.vector_db = None
             else:
-                # 尝试加载向量数据库
-                self.vector_db = FAISS.load_local(vector_db_path, embeddings)
+                # 我们不再使用langchain的FAISS，直接使用原生faiss
+                # 这里设置vector_db为None，后续会通过self.index访问
+                self.vector_db = None
                 
-                # 验证向量数据库是否成功加载
-                if not self.vector_db.index:
-                    print("警告: 加载了向量数据库，但索引为空")
-                else:
-                    print(f"向量数据库成功加载，包含{self.vector_db.index.ntotal}个向量")
-                    
             # API配置
             self.api_url = "https://qianfan.baidubce.com/v2/chat/completions"
             self.headers = {
@@ -273,38 +268,46 @@ class RAGSystem:
     def retrieve(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         """检索与查询相关的文档"""
         try:
-            # 如果没有加载向量数据库，返回空列表
-            if not self.vector_db:
-                print("警告: 向量数据库未加载")
+            # 如果没有加载向量索引，返回空列表
+            if not hasattr(self, 'index') or self.index is None:
+                print("警告: 向量索引未加载")
                 return []
             
             print(f"执行查询: {query}")
             
-            # 增加返回的文档数量，从5增加到8
-            results = self.vector_db.similarity_search_with_score(
-                query=query,
-                k=8  # 增加检索文档数量
-            )
+            # 使用直接的FAISS搜索替代langchain的方法
+            # 编码查询
+            query_vector = self.embedding_model.encode(query, convert_to_numpy=True)
+            query_vector = np.array([query_vector]).astype('float32')
             
-            contexts = []
-            for doc, score in results:
-                # 转换分数为相似度（假设score是欧几里得距离，越小越好）
-                # 这里对不同的距离度量需要不同的转换方式
-                if score > 1:  # 可能是距离而非相似度
-                    similarity = 1 / (1 + score)  # 转换为0-1的相似度
-                else:
-                    similarity = 1 - score  # 假设是标准化后的距离
+            # 使用FAISS进行搜索
+            k = min(top_k, self.index.ntotal)  # 确保k不超过索引中的总向量数
+            if k == 0:
+                return []
                 
-                # 构建上下文字典
+            distances, indices = self.index.search(query_vector, k)
+            
+            # 收集结果
+            contexts = []
+            for i, (dist, idx) in enumerate(zip(distances[0], indices[0])):
+                if idx < 0 or idx >= len(self.metadata_list):  # 检查索引是否有效
+                    continue
+                    
+                metadata = self.metadata_list[idx]
+                text = self.texts[idx] if idx < len(self.texts) else ""
+                
+                # 计算相似度 (将距离转换为相似度)
+                similarity = 1.0 / (1.0 + dist)
+                
                 context = {
-                    "content": doc.page_content,
-                    "title": doc.metadata.get("title", "未知标题"),
-                    "path": doc.metadata.get("path", "未知路径"),
+                    "content": text,
+                    "title": metadata.get("title", f"文档 #{idx}"),
+                    "path": metadata.get("path", ""),
                     "similarity": similarity,
-                    "score": score
+                    "score": dist  # 原始距离分数
                 }
                 contexts.append(context)
-                
+            
             # 调试输出
             print(f"检索到{len(contexts)}个文档")
             for i, ctx in enumerate(contexts):
