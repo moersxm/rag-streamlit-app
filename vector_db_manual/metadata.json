@@ -10,7 +10,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\湖北省招标股份有限公司简介\\001_湖北省招标股份有限公司简介.txt"
+    "path": "manual_chunks\\湖北省招标股份有限公司简介\\001_湖北省招标股份有限公司简介.txt"
   },
   {
     "chunk_id": "manual_001",
@@ -23,7 +23,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\001_《中华人民共和国政府采购法》.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\001_《中华人民共和国政府采购法》.txt"
   },
   {
     "chunk_id": "manual_002",
@@ -36,7 +36,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\002_《中华人民共和国政府采购法实施条例》（国务院令第658号）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\002_《中华人民共和国政府采购法实施条例》（国务院令第658号）.txt"
   },
   {
     "chunk_id": "manual_003",
@@ -49,7 +49,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\003_《关于修改中华人民共和国招标投标法、中华人民共和国计量法的决定》（主席令第86号）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\003_《关于修改中华人民共和国招标投标法、中华人民共和国计量法的决定》（主席令第86号）.txt"
   },
   {
     "chunk_id": "manual_004",
@@ -62,7 +62,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\004_《中华人民共和国招标投标法》（主席令第21号）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\004_《中华人民共和国招标投标法》（主席令第21号）.txt"
   },
   {
     "chunk_id": "manual_005",
@@ -75,7 +75,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\005_《中华人民共和国招标投标法实施条例》（国务院令第613号）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\005_《中华人民共和国招标投标法实施条例》（国务院令第613号）.txt"
   },
   {
     "chunk_id": "manual_006",
@@ -88,7 +88,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\006_《中华人民共和国预算法》（2018年修正）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\006_《中华人民共和国预算法》（2018年修正）.txt"
   },
   {
     "chunk_id": "manual_007",
@@ -101,7 +101,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\007_国务院《关于进一步深化预算管理制度改革的意见》（国发〔2021〕5号）.txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\007_国务院《关于进一步深化预算管理制度改革的意见》（国发〔2021〕5号）.txt"
   },
   {
     "chunk_id": "manual_008",
@@ -114,7 +114,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第一部分_国家法律法规及政府文件\\008_国务院办公厅《关于印发中央预算单位政府集中采购目录及标准（2020年版）的通知》（国办发〔20....txt"
+    "path": "manual_chunks\\第一部分_国家法律法规及政府文件\\008_国务院办公厅《关于印发中央预算单位政府集中采购目录及标准（2020年版）的通知》（国办发〔20....txt"
   },
   {
     "chunk_id": "manual_001",
@@ -127,7 +127,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\001_省人民政府办公厅《关于印发湖北省政府集中采购目录及标准（2021年版）的通知》（鄂政办发〔20....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\001_省人民政府办公厅《关于印发湖北省政府集中采购目录及标准（2021年版）的通知》（鄂政办发〔20....txt"
   },
   {
     "chunk_id": "manual_002",
@@ -140,7 +140,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\002_省财政厅《关于建立政府采购台账的通知》（鄂财采发〔2009〕10号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\002_省财政厅《关于建立政府采购台账的通知》（鄂财采发〔2009〕10号）.txt"
   },
   {
     "chunk_id": "manual_003",
@@ -153,7 +153,7 @@
       "missing_tables": true
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\003_省物价局_省住建厅《关于印发工程造价咨询服务收费标准的通知》（鄂价工服规〔2012〕149号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\003_省物价局_省住建厅《关于印发工程造价咨询服务收费标准的通知》（鄂价工服规〔2012〕149号）.txt"
   },
   {
     "chunk_id": "manual_004",
@@ -166,7 +166,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\004_省人民政府办公厅《关于政府向社会力量购买服务实施意见（试行）》.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\004_省人民政府办公厅《关于政府向社会力量购买服务实施意见（试行）》.txt"
   },
   {
     "chunk_id": "manual_005",
@@ -179,7 +179,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\005_省财政厅《关于政府采购项目价格权重及评审管理有关事项的通知》（鄂财采发〔2015〕5号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\005_省财政厅《关于政府采购项目价格权重及评审管理有关事项的通知》（鄂财采发〔2015〕5号）.txt"
   },
   {
     "chunk_id": "manual_006",
@@ -192,7 +192,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\006_省财政厅《关于省级政府采购项目信息公告有关事项的通知》（鄂财采发〔2015〕6号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\006_省财政厅《关于省级政府采购项目信息公告有关事项的通知》（鄂财采发〔2015〕6号）.txt"
   },
   {
     "chunk_id": "manual_007",
@@ -205,7 +205,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\007_省财政厅《对省交通运输厅有关政府采购事项的回函》（鄂财采字〔2015〕3830号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\007_省财政厅《对省交通运输厅有关政府采购事项的回函》（鄂财采字〔2015〕3830号）.txt"
   },
   {
     "chunk_id": "manual_008",
@@ -218,7 +218,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\008_省财政厅《关于省级政府采购预算管理有关事项的通知》（鄂财函〔2016〕91号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\008_省财政厅《关于省级政府采购预算管理有关事项的通知》（鄂财函〔2016〕91号）.txt"
   },
   {
     "chunk_id": "manual_009",
@@ -231,7 +231,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\009_省财政厅《关于加强政府采购进口产品管理的通知》（鄂财函〔2016〕98号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\009_省财政厅《关于加强政府采购进口产品管理的通知》（鄂财函〔2016〕98号）.txt"
   },
   {
     "chunk_id": "manual_010",
@@ -244,7 +244,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\010_省委办公厅_省政府办公厅《关于印发湖北省深入推进科技体制改革实施方案的通知》（鄂办发〔2016....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\010_省委办公厅_省政府办公厅《关于印发湖北省深入推进科技体制改革实施方案的通知》（鄂办发〔2016....txt"
   },
   {
     "chunk_id": "manual_011",
@@ -257,7 +257,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\011_省财政厅《关于印发湖北省省级政府采购进口产品清单（第一批的通知》（鄂财采发〔2016〕3号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\011_省财政厅《关于印发湖北省省级政府采购进口产品清单（第一批的通知》（鄂财采发〔2016〕3号）.txt"
   },
   {
     "chunk_id": "manual_012",
@@ -270,7 +270,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\012_省财政厅《关于正版软件采购有关事项的通知》(鄂财办采〔2016〕296号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\012_省财政厅《关于正版软件采购有关事项的通知》(鄂财办采〔2016〕296号).txt"
   },
   {
     "chunk_id": "manual_013",
@@ -283,7 +283,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\013_省财政厅《关于进一步规范政府采购质疑答复工作有关事项的通知》（鄂财函〔2016〕309号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\013_省财政厅《关于进一步规范政府采购质疑答复工作有关事项的通知》（鄂财函〔2016〕309号）.txt"
   },
   {
     "chunk_id": "manual_014",
@@ -296,7 +296,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\014_省财政厅《关于转发财政部关于在政府采购活动中查询及使用信用记录有关问题的通知的通知》（鄂财采发....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\014_省财政厅《关于转发财政部关于在政府采购活动中查询及使用信用记录有关问题的通知的通知》（鄂财采发....txt"
   },
   {
     "chunk_id": "manual_015",
@@ -309,7 +309,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\015_省财政厅《关于2016年实施批量集中采购工作有关事项的通知》(鄂财函〔2016〕335号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\015_省财政厅《关于2016年实施批量集中采购工作有关事项的通知》(鄂财函〔2016〕335号).txt"
   },
   {
     "chunk_id": "manual_016",
@@ -322,7 +322,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\016_省财政厅《关于加强政府采购内部控制管理的通知》（鄂财采发〔2016〕6号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\016_省财政厅《关于加强政府采购内部控制管理的通知》（鄂财采发〔2016〕6号）.txt"
   },
   {
     "chunk_id": "manual_017",
@@ -335,7 +335,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\017_省财政厅《关于进一步加强政府采购活动中信用记录管理有关事项的通知》（鄂财采发〔2016〕7号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\017_省财政厅《关于进一步加强政府采购活动中信用记录管理有关事项的通知》（鄂财采发〔2016〕7号）.txt"
   },
   {
     "chunk_id": "manual_018",
@@ -348,7 +348,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\018_省财政厅《关于废止和失效部分政府采购规范性文件的公告》（鄂财采发〔2016〕9号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\018_省财政厅《关于废止和失效部分政府采购规范性文件的公告》（鄂财采发〔2016〕9号）.txt"
   },
   {
     "chunk_id": "manual_019",
@@ -361,7 +361,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\019_省财政厅《关于2017年省级协议定点政府采购有关事项的通知》（鄂财函〔2017〕40号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\019_省财政厅《关于2017年省级协议定点政府采购有关事项的通知》（鄂财函〔2017〕40号）.txt"
   },
   {
     "chunk_id": "manual_020",
@@ -374,7 +374,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\020_省财政厅《关于2017年省级批量集中采购有关事项的通知》（鄂财函〔2017〕55号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\020_省财政厅《关于2017年省级批量集中采购有关事项的通知》（鄂财函〔2017〕55号）.txt"
   },
   {
     "chunk_id": "manual_021",
@@ -387,7 +387,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\021_省财政厅《关于印发湖北省省级党政机关培训费管理办法有关问题的解答的通知》（鄂财函〔2017〕1....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\021_省财政厅《关于印发湖北省省级党政机关培训费管理办法有关问题的解答的通知》（鄂财函〔2017〕1....txt"
   },
   {
     "chunk_id": "manual_022",
@@ -400,7 +400,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\022_省财政厅《关于进一步做好省属高校政府采购有关工作的通知》(鄂财函〔2017〕214号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\022_省财政厅《关于进一步做好省属高校政府采购有关工作的通知》(鄂财函〔2017〕214号).txt"
   },
   {
     "chunk_id": "manual_023",
@@ -413,7 +413,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\023_省财政厅《关于进一步加强政府采购方式变更管理有关事项的通知》(鄂财函〔2017〕215号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\023_省财政厅《关于进一步加强政府采购方式变更管理有关事项的通知》(鄂财函〔2017〕215号).txt"
   },
   {
     "chunk_id": "manual_024",
@@ -426,7 +426,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\024_省财政厅《关于进一步做好政府采购信息公开工作有关事项的通知》（鄂财采发〔2017〕6号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\024_省财政厅《关于进一步做好政府采购信息公开工作有关事项的通知》（鄂财采发〔2017〕6号）.txt"
   },
   {
     "chunk_id": "manual_025",
@@ -439,7 +439,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\025_省财政厅《关于实施政府采购信用承诺制度的通知》（鄂财采发〔2018〕9号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\025_省财政厅《关于实施政府采购信用承诺制度的通知》（鄂财采发〔2018〕9号）.txt"
   },
   {
     "chunk_id": "manual_026",
@@ -452,7 +452,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\026_省财政厅《停止收取政府采购投标保证金有关事项的通知》（鄂财采发〔2018〕10号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\026_省财政厅《停止收取政府采购投标保证金有关事项的通知》（鄂财采发〔2018〕10号）.txt"
   },
   {
     "chunk_id": "manual_027",
@@ -465,7 +465,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\027_省财政厅《关于深化省级行政事业单位国有资产管理_“放管服”_改革有关事项的通知》（鄂财行资发[....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\027_省财政厅《关于深化省级行政事业单位国有资产管理_“放管服”_改革有关事项的通知》（鄂财行资发[....txt"
   },
   {
     "chunk_id": "manual_028",
@@ -478,7 +478,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\028_省财政厅《关于印发湖北省政府采购负面清单的通知》（鄂财采发〔2019〕6号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\028_省财政厅《关于印发湖北省政府采购负面清单的通知》（鄂财采发〔2019〕6号）.txt"
   },
   {
     "chunk_id": "manual_029",
@@ -491,7 +491,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\029_省财政厅《关于进一步加强和规范政府采购单一来源采购方式管理的通知》（鄂财采规〔2020〕1号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\029_省财政厅《关于进一步加强和规范政府采购单一来源采购方式管理的通知》（鄂财采规〔2020〕1号）.txt"
   },
   {
     "chunk_id": "manual_030",
@@ -504,7 +504,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\030_省财政厅《关于印发湖北省政府采购意向公开工作方案的通知》（鄂财函〔2020〕38号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\030_省财政厅《关于印发湖北省政府采购意向公开工作方案的通知》（鄂财函〔2020〕38号）.txt"
   },
   {
     "chunk_id": "manual_031",
@@ -517,7 +517,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\031_省人民政府办公厅《关于印发湖北省公共资源交易目录的通知》（鄂政办函〔2020〕27号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\031_省人民政府办公厅《关于印发湖北省公共资源交易目录的通知》（鄂政办函〔2020〕27号）.txt"
   },
   {
     "chunk_id": "manual_032",
@@ -530,7 +530,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\032_省财政厅《关于印发湖北省财政厅政府购买服务指导性目录的通知》（鄂财办函〔2021〕3号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\032_省财政厅《关于印发湖北省财政厅政府购买服务指导性目录的通知》（鄂财办函〔2021〕3号）.txt"
   },
   {
     "chunk_id": "manual_033",
@@ -543,7 +543,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\033_省经信厅_省财政厅《关于调整涉企保证金目录清单的通知》（鄂经信减负〔2021〕74号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\033_省经信厅_省财政厅《关于调整涉企保证金目录清单的通知》（鄂经信减负〔2021〕74号）.txt"
   },
   {
     "chunk_id": "manual_034",
@@ -556,7 +556,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\034_省财政厅_省经信厅《关于进一步加强政府采购促进中小企业发展的通知》（鄂财采发〔2021〕8号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\034_省财政厅_省经信厅《关于进一步加强政府采购促进中小企业发展的通知》（鄂财采发〔2021〕8号）.txt"
   },
   {
     "chunk_id": "manual_035",
@@ -569,7 +569,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\035_省财政厅《关于印发《湖北省政府采购评审专家管理实施办法》的通知》(鄂财采规〔2022〕1号)_....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\035_省财政厅《关于印发《湖北省政府采购评审专家管理实施办法》的通知》(鄂财采规〔2022〕1号)_....txt"
   },
   {
     "chunk_id": "manual_036",
@@ -582,7 +582,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\036_省财政厅《关于印发湖北省省级政府采购工作规程的通知》（鄂财采规〔2022〕2号）.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\036_省财政厅《关于印发湖北省省级政府采购工作规程的通知》（鄂财采规〔2022〕2号）.txt"
   },
   {
     "chunk_id": "manual_037",
@@ -595,7 +595,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\037_省财政厅《关于印发湖北省政府采购代理机构记分管理办法（试行）的通知》(鄂财采规〔2022〕3号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\037_省财政厅《关于印发湖北省政府采购代理机构记分管理办法（试行）的通知》(鄂财采规〔2022〕3号).txt"
   },
   {
     "chunk_id": "manual_038",
@@ -608,7 +608,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\038_省财政厅_省交易管理局《关于落实稳住经济一揽子政策进一步加大政府采购支持中小企业力度的通知》（....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\038_省财政厅_省交易管理局《关于落实稳住经济一揽子政策进一步加大政府采购支持中小企业力度的通知》（....txt"
   },
   {
     "chunk_id": "manual_039",
@@ -621,7 +621,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\039_省公共资源交易监管局等《关于印发落实政府采购政策支持中小企业发展系列招标示范文本的通知》（鄂公....txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\039_省公共资源交易监管局等《关于印发落实政府采购政策支持中小企业发展系列招标示范文本的通知》（鄂公....txt"
   },
   {
     "chunk_id": "manual_040",
@@ -634,7 +634,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\040_省财政厅《关于落实政府采购品目分类目录的通知》(鄂财采发〔2022〕9号).txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\040_省财政厅《关于落实政府采购品目分类目录的通知》(鄂财采发〔2022〕9号).txt"
   },
   {
     "chunk_id": "manual_041",
@@ -647,7 +647,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第三部分_省级政府采购管理文件\\041_省财政厅《关于进一步加强省级政府采购预算管理的通知》.txt"
+    "path": "manual_chunks\\第三部分_省级政府采购管理文件\\041_省财政厅《关于进一步加强省级政府采购预算管理的通知》.txt"
   },
   {
     "chunk_id": "manual_001",
@@ -660,7 +660,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\001_财政部《政府采购非招标采购方式管理办法》（财政部令第74号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\001_财政部《政府采购非招标采购方式管理办法》（财政部令第74号）.txt"
   },
   {
     "chunk_id": "manual_002",
@@ -673,7 +673,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\002_财政部《政府采购货物和服务招标投标管理办法》(财政部令第87号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\002_财政部《政府采购货物和服务招标投标管理办法》(财政部令第87号).txt"
   },
   {
     "chunk_id": "manual_003",
@@ -686,7 +686,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\003_财政部《政府采购质疑和投诉办法》（财政部令第94号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\003_财政部《政府采购质疑和投诉办法》（财政部令第94号）.txt"
   },
   {
     "chunk_id": "manual_004",
@@ -699,7 +699,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\004_财政部《政府采购信息发布管理办法》(财政部令第101号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\004_财政部《政府采购信息发布管理办法》(财政部令第101号).txt"
   },
   {
     "chunk_id": "manual_005",
@@ -712,7 +712,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\005_财政部《政府购买服务管理办法》（财政部令102号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\005_财政部《政府购买服务管理办法》（财政部令102号）.txt"
   },
   {
     "chunk_id": "manual_006",
@@ -725,7 +725,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\006_财政部《关于公布废止和失效的财政规章和规范性文件目录（第十三批）的决定》（财政部令103号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\006_财政部《关于公布废止和失效的财政规章和规范性文件目录（第十三批）的决定》（财政部令103号）.txt"
   },
   {
     "chunk_id": "manual_007",
@@ -738,7 +738,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\007_财政部《政府采购框架协议采购方式管理暂行办法》（财政部令110号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\007_财政部《政府采购框架协议采购方式管理暂行办法》（财政部令110号）.txt"
   },
   {
     "chunk_id": "manual_008",
@@ -751,7 +751,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\008_国家计委《招标代理服务收费管理暂行办法》（计价格〔2002〕1980号文件）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\008_国家计委《招标代理服务收费管理暂行办法》（计价格〔2002〕1980号文件）.txt"
   },
   {
     "chunk_id": "manual_009",
@@ -764,7 +764,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\009_国家发改委办公厅《关于招标代理服务收费有关问题的通知》（发改办价格〔2003〕857号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\009_国家发改委办公厅《关于招标代理服务收费有关问题的通知》（发改办价格〔2003〕857号）.txt"
   },
   {
     "chunk_id": "manual_010",
@@ -777,7 +777,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\010_财政部、国家发改委《关于印发节能产品政府采购实施意见的通知》(财库〔2004〕185号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\010_财政部、国家发改委《关于印发节能产品政府采购实施意见的通知》(财库〔2004〕185号).txt"
   },
   {
     "chunk_id": "manual_011",
@@ -790,7 +790,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\011_财政部《关于印发政府采购进口产品管理办法的通知》（财库〔2007〕119号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\011_财政部《关于印发政府采购进口产品管理办法的通知》（财库〔2007〕119号）.txt"
   },
   {
     "chunk_id": "manual_012",
@@ -803,7 +803,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\012_财政部《关于政府采购进口产品管理有关问题的通知》（财办库﹝2008﹞248号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\012_财政部《关于政府采购进口产品管理有关问题的通知》（财办库﹝2008﹞248号）.txt"
   },
   {
     "chunk_id": "manual_013",
@@ -816,7 +816,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\013_工信部_统计局_发改委_财政部《中小企业划型标准规定》（工信部联企业〔2011〕300号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\013_工信部_统计局_发改委_财政部《中小企业划型标准规定》（工信部联企业〔2011〕300号）.txt"
   },
   {
     "chunk_id": "manual_014",
@@ -829,7 +829,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\014_财政部《关于信息系统建设项目采购有关问题的通知》(财库〔2011〕59号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\014_财政部《关于信息系统建设项目采购有关问题的通知》(财库〔2011〕59号).txt"
   },
   {
     "chunk_id": "manual_015",
@@ -842,7 +842,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\015_国家发改委《关于降低部分建设项目收费标准规范收费行为等有关问题的通知》（发改价格〔2011〕5....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\015_国家发改委《关于降低部分建设项目收费标准规范收费行为等有关问题的通知》（发改价格〔2011〕5....txt"
   },
   {
     "chunk_id": "manual_016",
@@ -855,7 +855,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\016_财政部《关于进一步规范政府采购评审工作有关问题的通知》（财库〔2012〕69号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\016_财政部《关于进一步规范政府采购评审工作有关问题的通知》（财库〔2012〕69号）.txt"
   },
   {
     "chunk_id": "manual_017",
@@ -868,7 +868,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\017_财政部《政府采购竞争性磋商采购方式管理暂行办法》（财库〔2014〕214号）_党中央有关部门，....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\017_财政部《政府采购竞争性磋商采购方式管理暂行办法》（财库〔2014〕214号）_党中央有关部门，....txt"
   },
   {
     "chunk_id": "manual_018",
@@ -881,7 +881,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\018_财政部《关于推进和完善服务项目政府采购有关问题的通知》(财库〔2014〕37号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\018_财政部《关于推进和完善服务项目政府采购有关问题的通知》(财库〔2014〕37号).txt"
   },
   {
     "chunk_id": "manual_019",
@@ -894,7 +894,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\019_财政部_司法部《关于政府采购支持监狱企业发展有关问题的通知》(财库〔2014〕68号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\019_财政部_司法部《关于政府采购支持监狱企业发展有关问题的通知》(财库〔2014〕68号).txt"
   },
   {
     "chunk_id": "manual_020",
@@ -907,7 +907,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\020_财政部《政府和社会资本合作项目政府采购管理办法》（财库〔2014〕215号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\020_财政部《政府和社会资本合作项目政府采购管理办法》（财库〔2014〕215号）.txt"
   },
   {
     "chunk_id": "manual_021",
@@ -920,7 +920,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\021_商务部《机电产品国际招标投标实施办法（试行）》（商务部令2014年第1号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\021_商务部《机电产品国际招标投标实施办法（试行）》（商务部令2014年第1号）.txt"
   },
   {
     "chunk_id": "manual_022",
@@ -933,7 +933,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\022_财政部《关于未达到公开招标数额标准政府采购项目采购方式适用等问题的函》（财办库〔2015〕111号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\022_财政部《关于未达到公开招标数额标准政府采购项目采购方式适用等问题的函》（财办库〔2015〕111号）.txt"
   },
   {
     "chunk_id": "manual_023",
@@ -946,7 +946,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\023_财政部《关于政府采购竞争性磋商采购方式管理暂行办法有关问题的补充通知》(财库〔2015〕124号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\023_财政部《关于政府采购竞争性磋商采购方式管理暂行办法有关问题的补充通知》(财库〔2015〕124号).txt"
   },
   {
     "chunk_id": "manual_024",
@@ -959,7 +959,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\024_财政部《关于做好政府采购信息公开工作的通知》（财库〔2015〕135号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\024_财政部《关于做好政府采购信息公开工作的通知》（财库〔2015〕135号）.txt"
   },
   {
     "chunk_id": "manual_025",
@@ -972,7 +972,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\025_财政部《关于规范政府采购行政处罚有关问题的通知》（财库〔2015〕150号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\025_财政部《关于规范政府采购行政处罚有关问题的通知》（财库〔2015〕150号）.txt"
   },
   {
     "chunk_id": "manual_026",
@@ -985,7 +985,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\026_财政部《关于中华人民共和国政府采购法实施条例第十八条第二款法律适用的函》（财办库〔2015〕2....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\026_财政部《关于中华人民共和国政府采购法实施条例第十八条第二款法律适用的函》（财办库〔2015〕2....txt"
   },
   {
     "chunk_id": "manual_027",
@@ -998,7 +998,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\027_财政部《关于转发国务院法制办公室对政府采购工程项目法律适用及申领施工许可证问题的答复的通知》(....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\027_财政部《关于转发国务院法制办公室对政府采购工程项目法律适用及申领施工许可证问题的答复的通知》(....txt"
   },
   {
     "chunk_id": "manual_028",
@@ -1011,7 +1011,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\028_《对政府采购工程项目法律适用及申领施工许可证问题的答复》.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\028_《对政府采购工程项目法律适用及申领施工许可证问题的答复》.txt"
   },
   {
     "chunk_id": "manual_029",
@@ -1024,7 +1024,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\029_国家发改委《关于进一步放开建设项目专业服务价格的通知》（发改价格〔2015〕299号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\029_国家发改委《关于进一步放开建设项目专业服务价格的通知》（发改价格〔2015〕299号）.txt"
   },
   {
     "chunk_id": "manual_030",
@@ -1037,7 +1037,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\030_国家发改委办公厅《公共资源交易平台管理暂行办法》（14部委39号令）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\030_国家发改委办公厅《公共资源交易平台管理暂行办法》（14部委39号令）.txt"
   },
   {
     "chunk_id": "manual_031",
@@ -1050,7 +1050,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\031_财政部中央编办《关于做好事业单位政府购买服务改革工作的意见》（财综〔2016〕53号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\031_财政部中央编办《关于做好事业单位政府购买服务改革工作的意见》（财综〔2016〕53号）.txt"
   },
   {
     "chunk_id": "manual_032",
@@ -1063,7 +1063,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\032_财政部《关于加强政府采购活动内部控制管理的指导意见》（财库〔2016〕99号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\032_财政部《关于加强政府采购活动内部控制管理的指导意见》（财库〔2016〕99号）.txt"
   },
   {
     "chunk_id": "manual_033",
@@ -1076,7 +1076,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\033_财政部《关于在政府采购活动中查询及使用信用记录有关问题的通知》（财库〔2016〕125号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\033_财政部《关于在政府采购活动中查询及使用信用记录有关问题的通知》（财库〔2016〕125号）.txt"
   },
   {
     "chunk_id": "manual_034",
@@ -1089,7 +1089,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\034_财政部《关于完善中央单位政府采购预算管理和中央高校、科研院所科研仪器设备采购管理有关事项的通知....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\034_财政部《关于完善中央单位政府采购预算管理和中央高校、科研院所科研仪器设备采购管理有关事项的通知....txt"
   },
   {
     "chunk_id": "manual_035",
@@ -1102,7 +1102,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\035_财政部_交通运输部《关于推进交通运输领域政府购买服务的指导意见》_各省、自治区、直辖市、计划单....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\035_财政部_交通运输部《关于推进交通运输领域政府购买服务的指导意见》_各省、自治区、直辖市、计划单....txt"
   },
   {
     "chunk_id": "manual_036",
@@ -1115,7 +1115,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\036_财政部《关于印发政府采购评审专家管理办法的通知》(财库〔2016〕198号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\036_财政部《关于印发政府采购评审专家管理办法的通知》(财库〔2016〕198号).txt"
   },
   {
     "chunk_id": "manual_037",
@@ -1128,7 +1128,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\037_财政部《关于进一步加强政府采购需求和履约验收管理的指导意见》(财库〔2016〕205号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\037_财政部《关于进一步加强政府采购需求和履约验收管理的指导意见》(财库〔2016〕205号).txt"
   },
   {
     "chunk_id": "manual_038",
@@ -1141,7 +1141,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\038_财政部《关于对中央预算单位政府采购执行情况实行动态监管的通知》(财办库〔2016〕413号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\038_财政部《关于对中央预算单位政府采购执行情况实行动态监管的通知》(财办库〔2016〕413号).txt"
   },
   {
     "chunk_id": "manual_039",
@@ -1154,7 +1154,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\039_财政部《关于简化优化中央预算单位变更政府采购方式和采购进口产品审批审核有关事宜的通知》(财办库....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\039_财政部《关于简化优化中央预算单位变更政府采购方式和采购进口产品审批审核有关事宜的通知》(财办库....txt"
   },
   {
     "chunk_id": "manual_040",
@@ -1167,7 +1167,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\040_财政部《关于进一步做好中央预算单位批量集中采购有关工作的通知》(财办库〔2016〕425号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\040_财政部《关于进一步做好中央预算单位批量集中采购有关工作的通知》(财办库〔2016〕425号).txt"
   },
   {
     "chunk_id": "manual_041",
@@ -1180,7 +1180,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\041_财政部_民政部《关于通过政府购买服务支持社会组织培育发展的指导意见》（财综〔2016〕54号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\041_财政部_民政部《关于通过政府购买服务支持社会组织培育发展的指导意见》（财综〔2016〕54号）.txt"
   },
   {
     "chunk_id": "manual_042",
@@ -1193,7 +1193,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\042_财政部《关于印发财政部政府和社会资本合作（PPP）专家库管理办法的通知》（财金〔2016〕144号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\042_财政部《关于印发财政部政府和社会资本合作（PPP）专家库管理办法的通知》（财金〔2016〕144号）.txt"
   },
   {
     "chunk_id": "manual_043",
@@ -1206,7 +1206,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\043_财政部《关于印发政府和社会资本合作（PPP）综合信息平台信息公开管理暂行办法的通知》（财金〔2....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\043_财政部《关于印发政府和社会资本合作（PPP）综合信息平台信息公开管理暂行办法的通知》（财金〔2....txt"
   },
   {
     "chunk_id": "manual_044",
@@ -1219,7 +1219,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\044_财政部《关于印发政府和社会资本合作（PPP）咨询机构库管理暂行办法的通知》（财金〔2017〕8号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\044_财政部《关于印发政府和社会资本合作（PPP）咨询机构库管理暂行办法的通知》（财金〔2017〕8号）.txt"
   },
   {
     "chunk_id": "manual_045",
@@ -1232,7 +1232,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\045_财政部《关于进一步做好政府采购信息公开工作有关事项的通知》（财库〔2017〕86号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\045_财政部《关于进一步做好政府采购信息公开工作有关事项的通知》（财库〔2017〕86号）.txt"
   },
   {
     "chunk_id": "manual_046",
@@ -1245,7 +1245,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\046_财政部《关于规范政府和社会资本合作（PPP）综合信息平台项目库管理的通知》（财办金〔2017〕....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\046_财政部《关于规范政府和社会资本合作（PPP）综合信息平台项目库管理的通知》（财办金〔2017〕....txt"
   },
   {
     "chunk_id": "manual_047",
@@ -1258,7 +1258,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\047_财政部_民政部《残疾人联合会关于促进残疾人就业政府采购政策的通知》（财库〔2017〕141号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\047_财政部_民政部《残疾人联合会关于促进残疾人就业政府采购政策的通知》（财库〔2017〕141号）.txt"
   },
   {
     "chunk_id": "manual_048",
@@ -1271,7 +1271,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\048_住房城乡建设部办公厅《关于工程总承包项目和政府采购工程建设项目办理施工许可手续有关事项的通知》....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\048_住房城乡建设部办公厅《关于工程总承包项目和政府采购工程建设项目办理施工许可手续有关事项的通知》....txt"
   },
   {
     "chunk_id": "manual_049",
@@ -1284,7 +1284,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\049_财政部《关于中央预算单位2018年预算执行管理有关问题的通知》（财库〔2017〕207号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\049_财政部《关于中央预算单位2018年预算执行管理有关问题的通知》（财库〔2017〕207号）.txt"
   },
   {
     "chunk_id": "manual_050",
@@ -1297,7 +1297,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\050_财政部《关于印发政务信息系统政府采购管理暂行办法的通知》(财库〔2017〕210号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\050_财政部《关于印发政务信息系统政府采购管理暂行办法的通知》(财库〔2017〕210号).txt"
   },
   {
     "chunk_id": "manual_051",
@@ -1310,7 +1310,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\051_财政部《关于印发政府采购代理机构管理暂行办法的通知》(财库〔2018〕2号).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\051_财政部《关于印发政府采购代理机构管理暂行办法的通知》(财库〔2018〕2号).txt"
   },
   {
     "chunk_id": "manual_052",
@@ -1323,7 +1323,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\052_财政部《关于印发国有金融企业集中采购管理暂行规定的通知》（财金〔2018〕9号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\052_财政部《关于印发国有金融企业集中采购管理暂行规定的通知》（财金〔2018〕9号）.txt"
   },
   {
     "chunk_id": "manual_053",
@@ -1336,7 +1336,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\053_国家发改委《必须招标的工程项目规定》(发改委〔2018〕16号令).txt"
+    "path": "manual_chunks\\第二部分_部委文件\\053_国家发改委《必须招标的工程项目规定》(发改委〔2018〕16号令).txt"
   },
   {
     "chunk_id": "manual_054",
@@ -1349,7 +1349,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\054_国家发改委《关于印发必须招标的基础设施和公用事业项目范围规定的通知》（2018.6.6）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\054_国家发改委《关于印发必须招标的基础设施和公用事业项目范围规定的通知》（2018.6.6）.txt"
   },
   {
     "chunk_id": "manual_055",
@@ -1362,7 +1362,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\055_财政部《关于中央预算单位政府集中采购目录及标准有关问题的通知》（财库（2019）2号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\055_财政部《关于中央预算单位政府集中采购目录及标准有关问题的通知》（财库（2019）2号）.txt"
   },
   {
     "chunk_id": "manual_056",
@@ -1375,7 +1375,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\056_财政部_发展改革委_生态环境部_市场监管总局《关于调整优化节能产品、环境标志产品政府采购执行机....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\056_财政部_发展改革委_生态环境部_市场监管总局《关于调整优化节能产品、环境标志产品政府采购执行机....txt"
   },
   {
     "chunk_id": "manual_057",
@@ -1388,7 +1388,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\057_住房和城乡建设部_国家发展改革委《关于印发房屋建筑和市政基础设施项目工程总承包管理办法的通知》....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\057_住房和城乡建设部_国家发展改革委《关于印发房屋建筑和市政基础设施项目工程总承包管理办法的通知》....txt"
   },
   {
     "chunk_id": "manual_058",
@@ -1401,7 +1401,7 @@
       "missing_tables": true
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\058_财政部_生态环境部《关于印发环境标志产品政府采购品目清单的通知》（财库〔2019〕18号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\058_财政部_生态环境部《关于印发环境标志产品政府采购品目清单的通知》（财库〔2019〕18号）.txt"
   },
   {
     "chunk_id": "manual_059",
@@ -1414,7 +1414,7 @@
       "missing_tables": true
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\059_财政部_发展改革委《关于印发节能产品政府采购品目清单的通知》（财库〔2019〕19号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\059_财政部_发展改革委《关于印发节能产品政府采购品目清单的通知》（财库〔2019〕19号）.txt"
   },
   {
     "chunk_id": "manual_060",
@@ -1427,7 +1427,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\060_财政部《关于促进政府采购公平竞争优化营商环境的通知》（财库〔2019〕38号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\060_财政部《关于促进政府采购公平竞争优化营商环境的通知》（财库〔2019〕38号）.txt"
   },
   {
     "chunk_id": "manual_061",
@@ -1440,7 +1440,7 @@
       "missing_tables": true
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\061_财政部_国家保密局《关于印发涉密政府采购管理暂行办法的通知》（财库〔2019〕39号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\061_财政部_国家保密局《关于印发涉密政府采购管理暂行办法的通知》（财库〔2019〕39号）.txt"
   },
   {
     "chunk_id": "manual_062",
@@ -1453,7 +1453,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\062_财政部《关于采购人是否有权顺延确定中标或成交供应商等问题的函》（财库便函〔2019〕154号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\062_财政部《关于采购人是否有权顺延确定中标或成交供应商等问题的函》（财库便函〔2019〕154号）.txt"
   },
   {
     "chunk_id": "manual_063",
@@ -1466,7 +1466,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\063_财政部《关于开展政府采购意向公开工作的通知》（财库〔2020〕10号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\063_财政部《关于开展政府采购意向公开工作的通知》（财库〔2020〕10号）.txt"
   },
   {
     "chunk_id": "manual_064",
@@ -1479,7 +1479,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\064_财政部《关于印发政府采购公告和公示信息格式规范（2020年版）的通知》（财办库〔2020〕50号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\064_财政部《关于印发政府采购公告和公示信息格式规范（2020年版）的通知》（财办库〔2020〕50号）.txt"
   },
   {
     "chunk_id": "manual_065",
@@ -1492,7 +1492,7 @@
       "missing_tables": true
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\065_财政部、工信部《关于印发政府采购促进中小企业发展管理办法的通知》（财库〔2020〕46号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\065_财政部、工信部《关于印发政府采购促进中小企业发展管理办法的通知》（财库〔2020〕46号）.txt"
   },
   {
     "chunk_id": "manual_066",
@@ -1505,7 +1505,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\066_财政部《关于开展政府采购备选库、名录库、资格库专项清理的通知》（财办库〔2021〕14号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\066_财政部《关于开展政府采购备选库、名录库、资格库专项清理的通知》（财办库〔2021〕14号）.txt"
   },
   {
     "chunk_id": "manual_067",
@@ -1518,7 +1518,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\067_财政部_农业农村部_国家乡村振兴局《关于运用政府采购政策支持乡村产业振兴的通知》（财库〔202....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\067_财政部_农业农村部_国家乡村振兴局《关于运用政府采购政策支持乡村产业振兴的通知》（财库〔202....txt"
   },
   {
     "chunk_id": "manual_068",
@@ -1531,7 +1531,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\068_财政部《关于印发政府采购需求管理办法的通知》（财库〔2021〕22号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\068_财政部《关于印发政府采购需求管理办法的通知》（财库〔2021〕22号）.txt"
   },
   {
     "chunk_id": "manual_069",
@@ -1544,7 +1544,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\069_财政部《关于组织地方预算单位做好2021年政府采购脱贫地区农副产品工作的通知》（财办库〔202....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\069_财政部《关于组织地方预算单位做好2021年政府采购脱贫地区农副产品工作的通知》（财办库〔202....txt"
   },
   {
     "chunk_id": "manual_070",
@@ -1557,7 +1557,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\070_财政部《关于中华人民共和国政府采购法实施条例第十九条第一款“较大数额罚款”具体适用问题的意见》....txt"
+    "path": "manual_chunks\\第二部分_部委文件\\070_财政部《关于中华人民共和国政府采购法实施条例第十九条第一款“较大数额罚款”具体适用问题的意见》....txt"
   },
   {
     "chunk_id": "manual_071",
@@ -1570,7 +1570,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第二部分_部委文件\\071_财政部《关于进一步加大政府采购支持中小企业力度的通知》（财库〔2022〕19号）.txt"
+    "path": "manual_chunks\\第二部分_部委文件\\071_财政部《关于进一步加大政府采购支持中小企业力度的通知》（财库〔2022〕19号）.txt"
   },
   {
     "chunk_id": "manual_001",
@@ -1583,7 +1583,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\001_市财政局《关于进一步加强政府采购进口产品管理的通知》（武财采〔2016〕395号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\001_市财政局《关于进一步加强政府采购进口产品管理的通知》（武财采〔2016〕395号）.txt"
   },
   {
     "chunk_id": "manual_002",
@@ -1596,7 +1596,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\002_市财政局《关于公布政府采购类规范性文件清理结果的通知》(武财采〔2016〕832号).txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\002_市财政局《关于公布政府采购类规范性文件清理结果的通知》(武财采〔2016〕832号).txt"
   },
   {
     "chunk_id": "manual_003",
@@ -1609,7 +1609,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\003_市财政局《关于进一步明确政府采购管理有关事项的通知》（武财采〔2018〕1053号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\003_市财政局《关于进一步明确政府采购管理有关事项的通知》（武财采〔2018〕1053号）.txt"
   },
   {
     "chunk_id": "manual_004",
@@ -1622,7 +1622,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\004_市财政局《关于进一步加强政府采购管理有关事项的通知》（武财采〔2019〕450号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\004_市财政局《关于进一步加强政府采购管理有关事项的通知》（武财采〔2019〕450号）.txt"
   },
   {
     "chunk_id": "manual_005",
@@ -1635,7 +1635,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\005_市财政局《关于印发武汉市政府采购采购人责任清单的通知》（武财采函〔2019〕287号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\005_市财政局《关于印发武汉市政府采购采购人责任清单的通知》（武财采函〔2019〕287号）.txt"
   },
   {
     "chunk_id": "manual_006",
@@ -1648,7 +1648,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\006_市财政局《关于进一步做好政府采购工作有关事项的通知》（武财采〔2020〕894号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\006_市财政局《关于进一步做好政府采购工作有关事项的通知》（武财采〔2020〕894号）.txt"
   },
   {
     "chunk_id": "manual_007",
@@ -1661,7 +1661,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\007_市财政局_市经济和信息化局《关于政府采购支持中小企业发展有关事项的通知》.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\007_市财政局_市经济和信息化局《关于政府采购支持中小企业发展有关事项的通知》.txt"
   },
   {
     "chunk_id": "manual_008",
@@ -1674,7 +1674,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\008_市财政局《关于进一步优化政府采购营商环境有关工作的通知》.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\008_市财政局《关于进一步优化政府采购营商环境有关工作的通知》.txt"
   },
   {
     "chunk_id": "manual_009",
@@ -1687,7 +1687,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\009_市财政局《关于做好政府采购需求管理有关工作的通知》（〔2021〕1479号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\009_市财政局《关于做好政府采购需求管理有关工作的通知》（〔2021〕1479号）.txt"
   },
   {
     "chunk_id": "manual_010",
@@ -1700,7 +1700,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\010_市财政局《关于做好政府采购电子化交易工作的通知》.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\010_市财政局《关于做好政府采购电子化交易工作的通知》.txt"
   },
   {
     "chunk_id": "manual_011",
@@ -1713,7 +1713,7 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\011_市财政局《关于印发武汉市政府采购负面清单（2022版）的通知》（武财采〔2022〕217号）.txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\011_市财政局《关于印发武汉市政府采购负面清单（2022版）的通知》（武财采〔2022〕217号）.txt"
   },
   {
     "chunk_id": "manual_012",
@@ -1726,6 +1726,6 @@
       "missing_tables": false
     },
     "original_format": "manual",
-    "path": "\\home\\adminuser\\mount\\src\\rag-streamlit-app\\manual_chunks\\第四部分 武汉市级政府采购管理文件\\012_市财政局_人民银行武汉分行营业管理部_市公共资源交易监督管理局《关于推进政府采购预付款保函和履....txt"
+    "path": "manual_chunks\\第四部分 武汉市级政府采购管理文件\\012_市财政局_人民银行武汉分行营业管理部_市公共资源交易监督管理局《关于推进政府采购预付款保函和履....txt"
   }
 ]
