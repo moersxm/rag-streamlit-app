@@ -690,7 +690,7 @@ def main():
                                             relevance = max(10, min(95, 100 * (1 + similarity/10)))
                                         elif similarity == 0:
                                             # 确保至少有一个最小值，避免显示0%
-                                            relevance = 15.0
+                                            relevance = 1.0
                                         elif similarity < 1:
                                             # 如果是0-1范围的相似度值
                                             relevance = max(15, min(95, similarity * 100))
@@ -698,7 +698,7 @@ def main():
                                             # 如果是大于1的值(可能是原始分数)
                                             relevance = max(15, min(95, similarity * 10))
                                     else:
-                                        relevance = 15.0  # 默认相关度
+                                        relevance = 1.0  # 默认相关度
                                     
                                     relevance_color = "#10B981" if relevance > 70 else "#FBBF24" if relevance > 40 else "#EF4444"
                                     
@@ -712,11 +712,34 @@ def main():
                                     </div>
                                     """, unsafe_allow_html=True)
                                     
-                                    # 显示摘录的内容，限制长度
+                                    # 获取内容
                                     content = source.get("content", "")
-                                    if len(content) > 500:
-                                        content = content[:500] + "..."
-                                    st.markdown(f"<div style='margin-top:0.8rem;'>{content}</div>", unsafe_allow_html=True)
+                                    
+                                    # 添加内容总结和展示
+                                    if content:
+                                        # 展示原始内容（限制长度）
+                                        summary_length = min(500, len(content))
+                                        content_preview = content[:summary_length]
+                                        if len(content) > summary_length:
+                                            content_preview += "..."
+                                        
+                                        # 添加内容总结标签
+                                        st.markdown("<div style='font-weight:500; margin-top:0.8rem; color:#4B5563;'>内容摘录：</div>", unsafe_allow_html=True)
+                                        
+                                        # 显示内容预览
+                                        st.markdown(f"<div style='margin-top:0.4rem; background-color:#F9FAFB; padding:10px; border-radius:5px; font-size:0.95rem;'>{content_preview}</div>", unsafe_allow_html=True)
+                                        
+                                        # 为长文本添加"查看完整内容"按钮
+                                        if len(content) > summary_length:
+                                            with st.expander("查看完整内容"):
+                                                st.markdown(f"<div style='padding:10px;'>{content}</div>", unsafe_allow_html=True)
+                                        
+                                        # 添加内容总结（使用短句描述文档内容要点）
+                                        if len(content) > 200:  # 只为较长文档生成总结
+                                            summary = f"该文档主要涉及{source.get('title', '相关政策')}的内容，包含约{len(content)}个字符的专业信息。"
+                                            st.markdown(f"<div style='margin-top:0.8rem; font-style:italic; color:#4B5563; font-size:0.9rem;'>📝 内容简介：{summary}</div>", unsafe_allow_html=True)
+                                    else:
+                                        st.markdown("<div style='margin-top:0.8rem; color:#EF4444;'>无可用内容</div>", unsafe_allow_html=True)
                                     
                                     if "path" in source:
                                         st.caption(f"📄 文件路径: {source['path']}")
