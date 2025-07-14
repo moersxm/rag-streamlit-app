@@ -1,6 +1,16 @@
+# 基础依赖
 streamlit==1.30.0
+requests==2.31.0
+numpy>=1.20.0,<2.0.0
+
+# 向量数据库相关
 faiss-cpu==1.7.4
 sentence-transformers==2.2.2
-requests==2.31.0
-appbuilder-sdk==0.3.4
-numpy==1.24.3
+
+# 百度文心API - 使用最新可用版本
+appbuilder-sdk>=1.1.0
+
+# 其他依赖
+python-dotenv>=1.0.0
+markdown-it-py>=2.2.0
+pygments>=2.13.0
