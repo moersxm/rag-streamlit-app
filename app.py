@@ -54,10 +54,21 @@ def set_page_theme():
         }
         .answer-container {
             background-color: #F3F4F6;
-            padding: 1.5rem;
+            padding: 1.8rem;
             border-radius: 0.5rem;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
             border-left: 5px solid #3B82F6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .answer-header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #1E3A8A;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
         }
         .info-text {
             color: #4B5563;
@@ -78,6 +89,7 @@ def set_page_theme():
             border-radius: 0.5rem;
             padding: 1rem;
             margin-bottom: 0.8rem;
+            background-color: #FAFAFA;
         }
         .metrics-card {
             background-color: #F9FAFB;
@@ -85,14 +97,19 @@ def set_page_theme():
             border-radius: 0.5rem;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .metrics-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         .metrics-label {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #4B5563;
             margin-bottom: 0.3rem;
         }
         .metrics-value {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #1E3A8A;
             font-weight: bold;
         }
@@ -126,45 +143,54 @@ def set_page_theme():
         .css-1d391kg {
             background-color: #F9FAFB;
         }
-        /* 上传区域样式 */
-        .upload-section {
-            background-color: #F3F4F6;
-            padding: 1.2rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px dashed #3B82F6;
+        /* 文本区域样式改进 */
+        textarea {
+            border-radius: 0.5rem !important;
+            border-color: #D1D5DB !important;
         }
-        .success-message {
-            background-color: #D1FAE5;
-            color: #065F46;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            border-left: 5px solid #10B981;
+        textarea:focus {
+            border-color: #3B82F6 !important;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
         }
-        .parse-section {
-            background-color: #F5F3FF;
-            padding: 1.2rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px dashed #8B5CF6;
+        /* 历史记录样式 */
+        .history-item {
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
         }
-        .parse-result {
-            background-color: #F8FAFC;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            border-left: 4px solid #8B5CF6;
-            font-family: 'Georgia', serif;
-            white-space: pre-wrap;
-        }
-        .tab-content {
-            padding: 1rem 0;
-        }
-        .parse-header {
-            color: #6D28D9;
+        .history-question {
             font-weight: bold;
+            color: #1F2937;
             margin-bottom: 0.5rem;
+        }
+        .history-answer {
+            color: #4B5563;
+        }
+        /* 提示信息样式 */
+        .notice-box {
+            background-color: #EFF6FF;
+            border-left: 5px solid #3B82F6;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.3rem;
+        }
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .main-header {
+                font-size: 2rem;
+                padding: 1rem 0;
+            }
+            .metrics-value {
+                font-size: 1.1rem;
+            }
+        }
+        /* 添加动画效果 */
+        .answer-container {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
     """, unsafe_allow_html=True)
@@ -317,13 +343,25 @@ def main():
     # 仅保留智能问答功能
     st.markdown('<h2 class="main-header">政府采购和PPP项目智能问答</h2>', unsafe_allow_html=True)
 
+    # 添加简短介绍
+    st.markdown("""
+    <div class="notice-box">
+        本系统基于湖北省政府采购和PPP项目相关法规和政策文件，可回答相关专业问题。
+        当知识库中没有相关信息时，系统会使用AI通用知识进行回答，并明确标注。
+    </div>
+    """, unsafe_allow_html=True)
+
     # 智能问答功能实现
     # 添加输入框和提交按钮
     with st.form("question_form"):
         query = st.text_area("请输入您的问题:", height=100, 
                               placeholder="例如：什么是政府采购？或者 PPP项目的风险如何控制？")
         
-        submit_button = st.form_submit_button("提交问题")
+        col1, col2 = st.columns([4, 1])
+        with col1:
+            st.markdown("") # 添加一些间距
+        with col2:
+            submit_button = st.form_submit_button("提交问题")
 
     # 处理问题提交
     if submit_button and query:
@@ -337,8 +375,21 @@ def main():
                     
                     # 显示结果
                     if "answer" in result:
+                        # 显示问题
+                        st.markdown(f"<div class='sub-header'>您的问题：</div>", unsafe_allow_html=True)
+                        st.markdown(f"<div>{query}</div>", unsafe_allow_html=True)
+                        
+                        # 显示回答，添加标题
+                        st.markdown(f"<div class='sub-header'>AI回答：</div>", unsafe_allow_html=True)
                         st.markdown("<div class='answer-container'>", unsafe_allow_html=True)
-                        st.markdown(result["answer"])
+                        # 检查是否是来自知识库外的回答
+                        if "【注意：知识库中没有找到与您问题直接相关的信息" in result["answer"]:
+                            # 分离免责声明和实际回答
+                            disclaimer, answer_text = result["answer"].split("\n\n", 1)
+                            st.markdown(f"<div style='color: #E02424; font-weight: bold; margin-bottom: 0.8rem;'>{disclaimer}</div>", unsafe_allow_html=True)
+                            st.markdown(answer_text)
+                        else:
+                            st.markdown(result["answer"])
                         st.markdown("</div>", unsafe_allow_html=True)
                         
                         # 显示参考来源
@@ -347,7 +398,13 @@ def main():
                                 for i, source in enumerate(result["sources"], 1):
                                     st.markdown(f"<div class='source-container'>", unsafe_allow_html=True)
                                     st.markdown(f"<div class='source-title'>来源 {i}: {source.get('title', '未知来源')}</div>", unsafe_allow_html=True)
-                                    st.markdown(source.get("content", ""))
+                                    
+                                    # 显示摘录的内容，限制长度
+                                    content = source.get("content", "")
+                                    if len(content) > 500:
+                                        content = content[:500] + "..."
+                                    st.markdown(content)
+                                    
                                     if "path" in source:
                                         st.caption(f"文件路径: {source['path']}")
                                     st.markdown("</div>", unsafe_allow_html=True)
@@ -356,6 +413,7 @@ def main():
                         
                         # 显示性能指标
                         if "metrics" in result:
+                            st.markdown("<div class='sub-header' style='font-size: 1.2rem;'>性能指标</div>", unsafe_allow_html=True)
                             metrics = result["metrics"]
                             col1, col2, col3 = st.columns(3)
                             
@@ -376,7 +434,7 @@ def main():
                                 st.markdown("<div class='metrics-label'>总耗时</div>", unsafe_allow_html=True)
                                 st.markdown(f"<div class='metrics-value'>{metrics.get('total_time', 0):.3f}秒</div>", unsafe_allow_html=True)
                                 st.markdown("</div>", unsafe_allow_html=True)
-                    
+                
                     # 保存到历史记录
                     if 'history' not in st.session_state:
                         st.session_state.history = []
@@ -394,9 +452,18 @@ def main():
     if st.session_state.get('history'):
         with st.expander("历史问答记录", expanded=False):
             for i, item in enumerate(reversed(st.session_state.history)):
-                st.markdown(f"**问题 {len(st.session_state.history) - i}**: {item['query']}")
-                st.markdown(f"**回答**: {item['result'].get('answer', '无回答')}")
-                st.markdown("---")
+                st.markdown(f"<div class='history-item'>", unsafe_allow_html=True)
+                st.markdown(f"<div class='history-question'>问题 {len(st.session_state.history) - i}：{item['query']}</div>", unsafe_allow_html=True)
+                
+                # 只显示回答的前150个字符作为摘要
+                answer = item['result'].get('answer', '无回答')
+                if len(answer) > 150:
+                    answer_summary = answer[:150] + "..."
+                else:
+                    answer_summary = answer
+                
+                st.markdown(f"<div class='history-answer'>回答：{answer_summary}</div>", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)
     
     # 页脚
     st.markdown("""
