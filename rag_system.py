@@ -19,7 +19,7 @@ class RAGSystem:
             'Authorization': 'Bearer bce-v3/ALTAK-tTXXQUFQTzD0wmpZaZcw8/6339a986fa067a766bb5cb45e94ec619443829d3',
             'appid': 'app-0uIqZTDX'
         }
-        self.model = "ernie-3.5-8k"
+        self.model = "ERNIE-4.5-8k"
         
         # 修改为调用静态方法以利用缓存
         self.embedding_model = self._load_embedding_model_cached()
@@ -383,7 +383,6 @@ class RAGSystem:
         contexts = self.retrieve(query)
         retrieval_time = time.time() - retrieval_start
         
-        # 使用修改后的键名检查
         has_good_match = any(ctx.get("similarity", 0) > 0.3 for ctx in contexts)
         
         if not contexts:
@@ -406,12 +405,11 @@ class RAGSystem:
         
         sources = []
         for context in contexts:
-            # 使用直接从context中获取的信息，不依赖于metadata键
+            metadata = context["metadata"]
             source = {
-                "title": context.get("title", "未知标题"),
-                "content": context.get("content", context.get("text", "")),
-                "path": context.get("path", "未知来源"),
-                "similarity": context.get("similarity", context.get("score", 0))
+                "title": metadata.get("section_title") or metadata.get("title") or "未知标题",
+                "path": metadata.get("path", "未知来源"),
+                "similarity": context["similarity"]
             }
             sources.append(source)
         
