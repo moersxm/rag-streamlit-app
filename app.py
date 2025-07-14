@@ -597,7 +597,16 @@ def main():
                         if "sources" in result and result["sources"]:
                             with st.expander("📚 参考来源详情", expanded=True):
                                 for i, source in enumerate(result["sources"], 1):
-                                    relevance = source.get("similarity", 0) * 100
+                                    # 修复相关度计算，确保它始终是正值且在0-100范围内
+                                    similarity = source.get("similarity", source.get("score", 0))
+                                    # 如果是距离值(越小越好)，则转换为相似度(越大越好)
+                                    if similarity < 0:
+                                        # 可能是负的距离值，转换为0-100的相关度
+                                        relevance = max(0, min(100, 100 * (1 + similarity)))
+                                    else:
+                                        # 假设是0-1的相似度值
+                                        relevance = max(0, min(100, similarity * 100))
+                                    
                                     relevance_color = "#10B981" if relevance > 70 else "#FBBF24" if relevance > 40 else "#EF4444"
                                     
                                     st.markdown(f"<div class='source-container'>", unsafe_allow_html=True)
@@ -662,37 +671,37 @@ def main():
                     st.exception(e)
                     st.error(f"详细错误信息: {traceback.format_exc()}")
 
-# 显示历史问答记录
-if st.session_state.get('history'):
-    with st.expander("📜 历史问答记录", expanded=False):
-        for i, item in enumerate(reversed(st.session_state.history)):
-            st.markdown(f"<div class='history-item'>", unsafe_allow_html=True)
-            
-            # 添加时间戳和序号
-            timestamp = item.get('timestamp', '')
-            
-            st.markdown(f"""
-            <div style='display:flex; justify-content:space-between; margin-bottom:0.5rem;'>
-                <div class='history-question'>问题 {len(st.session_state.history) - i}：{item['query']}</div>
-                <div style='font-size:0.8rem; color:#6B7280;'>{timestamp}</div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            # 只显示回答的前150个字符作为摘要
-            answer = item['result'].get('answer', '无回答')
-            if len(answer) > 150:
-                answer_summary = answer[:150] + "..."
-            else:
-                answer_summary = answer
-            
-            st.markdown(f"<div class='history-answer'>回答：{answer_summary}</div>", unsafe_allow_html=True)
-            
-            # 添加"查看完整回答"按钮
-            if st.button(f"查看完整回答 #{len(st.session_state.history) - i}", key=f"view_{i}"):
-                st.session_state.query = item['query']
-                st.rerun()
+    # 显示历史问答记录
+    if st.session_state.get('history'):
+        with st.expander("📜 历史问答记录", expanded=False):
+            for i, item in enumerate(reversed(st.session_state.history)):
+                st.markdown(f"<div class='history-item'>", unsafe_allow_html=True)
                 
-            st.markdown("</div>", unsafe_allow_html=True)
+                # 添加时间戳和序号
+                timestamp = item.get('timestamp', '')
+                
+                st.markdown(f"""
+                <div style='display:flex; justify-content:space-between; margin-bottom:0.5rem;'>
+                    <div class='history-question'>问题 {len(st.session_state.history) - i}：{item['query']}</div>
+                    <div style='font-size:0.8rem; color:#6B7280;'>{timestamp}</div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                # 只显示回答的前150个字符作为摘要
+                answer = item['result'].get('answer', '无回答')
+                if len(answer) > 150:
+                    answer_summary = answer[:150] + "..."
+                else:
+                    answer_summary = answer
+                
+                st.markdown(f"<div class='history-answer'>回答：{answer_summary}</div>", unsafe_allow_html=True)
+                
+                # 添加"查看完整回答"按钮
+                if st.button(f"查看完整回答 #{len(st.session_state.history) - i}", key=f"view_{i}"):
+                    st.session_state.query = item['query']
+                    st.rerun()
+                    
+                st.markdown("</div>", unsafe_allow_html=True)
     
     # 页脚
     st.markdown("""
@@ -707,5 +716,6 @@ if st.session_state.get('history'):
     </div>
     """, unsafe_allow_html=True)
 
+# 确保只有在作为主模块运行时才调用main函数
 if __name__ == "__main__":
     main()
