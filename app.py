@@ -690,7 +690,7 @@ def main():
                                             relevance = max(10, min(95, 100 * (1 + similarity/10)))
                                         elif similarity == 0:
                                             # 确保至少有一个最小值，避免显示0%
-                                            relevance = 1.0
+                                            relevance = 15.0
                                         elif similarity < 1:
                                             # 如果是0-1范围的相似度值
                                             relevance = max(15, min(95, similarity * 100))
@@ -698,7 +698,7 @@ def main():
                                             # 如果是大于1的值(可能是原始分数)
                                             relevance = max(15, min(95, similarity * 10))
                                     else:
-                                        relevance = 1.0  # 默认相关度
+                                        relevance = 15.0  # 默认相关度
                                     
                                     relevance_color = "#10B981" if relevance > 70 else "#FBBF24" if relevance > 40 else "#EF4444"
                                     
