@@ -127,6 +127,11 @@ class RAGSystem:
             with open(metadata_path, "r", encoding="utf-8") as f:
                 self.metadata_list = json.load(f)
             print(f"已加载 {len(self.metadata_list)} 条元数据记录")
+            
+            # 添加诊断信息，检查元数据结构
+            if self.metadata_list and len(self.metadata_list) > 0:
+                sample = self.metadata_list[0]
+                print(f"元数据样例: {sample.keys()}")
         except FileNotFoundError:
             print(f"元数据文件不存在: {metadata_path}")
             # 创建一个空的元数据列表
@@ -134,11 +139,6 @@ class RAGSystem:
         except Exception as e:
             print(f"加载元数据失败: {e}")
             self.metadata_list = []
-        
-        # 添加诊断信息，检查元数据结构
-        if self.metadata_list:
-            sample = self.metadata_list[0]
-            print(f"元数据样例: {json.dumps(sample, ensure_ascii=False)[:200]}...")
         
         # 加载文本内容
         self.texts = []
@@ -152,7 +152,7 @@ class RAGSystem:
                 continue
             
             # 修复路径，将Windows路径分隔符替换为当前系统的路径分隔符
-            text_path = text_path.replace('\\', os.sep)
+            text_path = text_path.replace('\\', os.sep).replace('/', os.sep)
             
             # 尝试几种可能的路径
             possible_paths = [
@@ -180,10 +180,11 @@ class RAGSystem:
             if not file_found:
                 self.texts.append("")  # 添加空文本
                 file_errors.append(f"无法读取文件: {text_path}")
-    
+        
         # 报告文件错误和成功率
-        print(f"成功找到并加载了 {file_found_count} 个文件，占总数的 {file_found_count/len(self.metadata_list)*100:.1f}%")
-    
+        if len(self.metadata_list) > 0:
+            print(f"成功找到并加载了 {file_found_count} 个文件，占总数的 {file_found_count/len(self.metadata_list)*100:.1f}%")
+        
         if file_errors:
             print(f"警告: 无法读取 {len(file_errors)} 个文件")
             for err in file_errors[:5]:  # 只显示前5个错误
@@ -207,12 +208,15 @@ class RAGSystem:
                         self._create_vector_index()
                 
                 # 添加一个额外检查，确保索引与文本数量匹配
-                if self.index.ntotal > 0 and self.index.ntotal != len(self.texts):
-                    print(f"警告: 索引中的向量数量({self.index.ntotal})与文本数量({len(self.texts)})不匹配")
-                    # 如果文本数量与索引不匹配，重建索引
-                    if abs(self.index.ntotal - len(self.texts)) > len(self.texts) * 0.1:  # 如果差异超过10%
-                        print("差异过大，重建索引...")
-                        self._create_vector_index()
+                if len(self.texts) > 0 and self.index.ntotal > 0:
+                    if self.index.ntotal != len(self.texts):
+                        print(f"警告: 索引中的向量数量({self.index.ntotal})与文本数量({len(self.texts)})不匹配")
+                        # 如果差异超过10%，重建索引
+                        if abs(self.index.ntotal - len(self.texts)) > len(self.texts) * 0.1:  
+                            print("差异过大，重建索引...")
+                            self._create_vector_index()
+                    else:
+                        print("索引向量数量与文本数量匹配，知识库加载成功")
                 
             except Exception as e:
                 print(f"加载索引失败: {e}")
@@ -262,7 +266,7 @@ class RAGSystem:
             print(f"创建索引失败: {str(e)}")
             raise
     
-    def retrieve(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
+    def retrieve(self, query: str, top_k: int = 3) -> List[Dict[str, Any]]:
         """检索与查询相关的文档"""
         if not hasattr(self, 'index') or self.index is None:
             print("警告: 索引未初始化，无法执行检索")
@@ -270,7 +274,6 @@ class RAGSystem:
         
         try:
             start_time = time.time()
-            print(f"执行检索，查询: \"{query}\"")
             
             # 向量化查询
             if self.embedding_model:
@@ -278,6 +281,7 @@ class RAGSystem:
             else:
                 # 如果没有embedding模型，使用随机向量（仅用于测试）
                 print("警告: 没有embedding模型，使用随机向量")
+                import numpy as np
                 query_vector = np.random.rand(1, self.index.d).astype('float32')
                 # 标准化向量
                 faiss.normalize_L2(query_vector)
@@ -296,45 +300,27 @@ class RAGSystem:
                 # 重新标准化
                 faiss.normalize_L2(query_vector)
             
-            # 检查索引中是否有足够的向量
-            actual_k = min(top_k, max(1, self.index.ntotal))
-            if actual_k < top_k:
-                print(f"警告: 请求的top_k={top_k}，但索引中只有{self.index.ntotal}个向量")
-            
-            if self.index.ntotal == 0:
-                print("索引为空，无法执行检索")
-                return []
-            
             # 搜索相似文档
-            distances, indices = self.index.search(query_vector, actual_k)
+            distances, indices = self.index.search(query_vector, min(top_k, len(self.texts)))
             
             results = []
             for i, idx in enumerate(indices[0]):
-                if idx >= 0 and idx < len(self.texts):
-                    # 检查索引是否有效
+                if idx >= 0 and idx < len(self.texts) and self.texts[idx].strip():
                     metadata = self.metadata_list[idx] if idx < len(self.metadata_list) else {}
                     
-                    # 更好的相似度计算方法 - 使用余弦相似度公式转换
-                    # FAISS的L2距离越小表示越相似，转换为相似度需要进行变换
-                    distance = float(distances[0][i])
-                    # 将L2距离转换为0-1范围的相似度
-                    similarity = 1.0 / (1.0 + distance)
-                    
-                    # 修改返回结果的结构，确保包含所有需要的字段
+                    # 修改返回结果的结构，使其与_build_prompt方法兼容
                     result = {
                         "content": self.texts[idx],
                         "text": self.texts[idx],  # 添加text键作为备份
-                        "score": similarity,  # 转换为相似度分数
-                        "similarity": similarity,  # 添加similarity键
-                        "title": metadata.get("title", metadata.get("section_title", os.path.basename(metadata.get("path", "")))),
+                        "score": float(1 - distances[0][i]),  # 转换为相似度分数
+                        "similarity": float(1 - distances[0][i]),  # 添加similarity键作为备份
+                        "title": metadata.get("section_title", os.path.basename(metadata.get("path", ""))),
                         "path": metadata.get("path", "")
                     }
                     results.append(result)
-                    
-                    print(f"  结果 #{i+1}: 相似度={similarity:.3f}, 标题={result['title'][:30]}...")
             
             retrieval_time = time.time() - start_time
-            print(f"检索完成，找到 {len(results)} 个结果，耗时: {retrieval_time:.3f}秒")
+            print(f"检索耗时: {retrieval_time:.3f}秒")
             
             return results
         except Exception as e:
@@ -426,11 +412,10 @@ class RAGSystem:
         start_time = time.time()
         
         retrieval_start = time.time()
-        contexts = self.retrieve(query, top_k=5)  # 增加到5个结果
+        contexts = self.retrieve(query)
         retrieval_time = time.time() - retrieval_start
         
-        # 降低相关性判断阈值从0.3到0.2
-        has_good_match = any(ctx.get("similarity", 0) > 0.2 for ctx in contexts)
+        has_good_match = any(ctx.get("similarity", 0) > 0.3 for ctx in contexts)
         
         if not contexts:
             return {
@@ -444,25 +429,25 @@ class RAGSystem:
             }
         
         if not has_good_match:
-            print("警告: 检索到的文档相关性较低，但将继续尝试回答")
+            print("警告: 检索到的文档相关性较低")
         
         generation_start = time.time()
         answer = self.generate(query, contexts)
         generation_time = time.time() - generation_start
         
-        # 修复metadata访问问题，并复制内容到sources
+        # 修复这里的metadata访问问题
         sources = []
         for context in contexts:
+            # 直接从context中获取信息，不再依赖metadata键
             source = {
                 "title": context.get("title", "未知标题"),
                 "path": context.get("path", "未知来源"),
-                "similarity": context.get("similarity", context.get("score", 0)),
-                "content": context.get("content", "")[:500]  # 限制内容长度
+                "similarity": context.get("similarity", context.get("score", 0))
             }
             sources.append(source)
         
-        # 只有当真正没有好的匹配并且检索到了结果时，才添加免责声明
-        if not has_good_match and len(contexts) > 0:
+        # 如果相关性较低，添加免责声明
+        if not has_good_match:
             answer = f"【注意：知识库中没有找到与您问题直接相关的信息，以下回答基于AI的通用知识，可能不完全准确】\n\n{answer}"
         
         return {
