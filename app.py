@@ -258,9 +258,87 @@ def main():
     
     # 仅保留智能问答功能
     st.markdown('<h2 class="main-header">政府采购和PPP项目智能问答</h2>', unsafe_allow_html=True)
-    
-    # 智能问答代码保持不变
-    # ...
+
+    # 智能问答功能实现
+    # 添加输入框和提交按钮
+    with st.form("question_form"):
+        query = st.text_area("请输入您的问题:", height=100, 
+                              placeholder="例如：什么是政府采购？或者 PPP项目的风险如何控制？")
+        
+        submit_button = st.form_submit_button("提交问题")
+
+    # 处理问题提交
+    if submit_button and query:
+        if not st.session_state.rag_system:
+            st.error("知识库加载失败，无法回答问题。请检查系统状态后重试。")
+        else:
+            with st.spinner("正在思考，请稍候..."):
+                try:
+                    # 调用RAG系统获取答案
+                    result = st.session_state.rag_system.answer(query)
+                    
+                    # 显示结果
+                    if "answer" in result:
+                        st.markdown("<div class='answer-container'>", unsafe_allow_html=True)
+                        st.markdown(result["answer"])
+                        st.markdown("</div>", unsafe_allow_html=True)
+                        
+                        # 显示参考来源
+                        if "sources" in result and result["sources"]:
+                            with st.expander("参考来源", expanded=True):
+                                for i, source in enumerate(result["sources"], 1):
+                                    st.markdown(f"<div class='source-container'>", unsafe_allow_html=True)
+                                    st.markdown(f"<div class='source-title'>来源 {i}: {source.get('title', '未知来源')}</div>", unsafe_allow_html=True)
+                                    st.markdown(source.get("content", ""))
+                                    if "path" in source:
+                                        st.caption(f"文件路径: {source['path']}")
+                                    st.markdown("</div>", unsafe_allow_html=True)
+                        else:
+                            st.info("未找到相关参考来源")
+                        
+                        # 显示性能指标
+                        if "metrics" in result:
+                            metrics = result["metrics"]
+                            col1, col2, col3 = st.columns(3)
+                            
+                            with col1:
+                                st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>检索耗时</div>", unsafe_allow_html=True)
+                                st.markdown(f"<div class='metrics-value'>{metrics.get('retrieval_time', 0):.3f}秒</div>", unsafe_allow_html=True)
+                                st.markdown("</div>", unsafe_allow_html=True)
+                                
+                            with col2:
+                                st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>生成耗时</div>", unsafe_allow_html=True)
+                                st.markdown(f"<div class='metrics-value'>{metrics.get('generation_time', 0):.3f}秒</div>", unsafe_allow_html=True)
+                                st.markdown("</div>", unsafe_allow_html=True)
+                                
+                            with col3:
+                                st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>总耗时</div>", unsafe_allow_html=True)
+                                st.markdown(f"<div class='metrics-value'>{metrics.get('total_time', 0):.3f}秒</div>", unsafe_allow_html=True)
+                                st.markdown("</div>", unsafe_allow_html=True)
+                    
+                    # 保存到历史记录
+                    if 'history' not in st.session_state:
+                        st.session_state.history = []
+                    
+                    st.session_state.history.append({
+                        "query": query,
+                        "result": result
+                    })
+                    
+                except Exception as e:
+                    st.error(f"处理问题时出错: {str(e)}")
+                    st.exception(e)
+
+    # 显示历史问答记录
+    if st.session_state.get('history'):
+        with st.expander("历史问答记录", expanded=False):
+            for i, item in enumerate(reversed(st.session_state.history)):
+                st.markdown(f"**问题 {len(st.session_state.history) - i}**: {item['query']}")
+                st.markdown(f"**回答**: {item['result'].get('answer', '无回答')}")
+                st.markdown("---")
     
     # 页脚
     st.markdown("""
