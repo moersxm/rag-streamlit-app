@@ -19,7 +19,7 @@ class RAGSystem:
             'Authorization': 'Bearer bce-v3/ALTAK-tTXXQUFQTzD0wmpZaZcw8/6339a986fa067a766bb5cb45e94ec619443829d3',
             'appid': 'app-0uIqZTDX'
         }
-        self.model = "ERNIE-4.5-8k"
+        self.model = "ernie-4.0-8k"
         
         # 修改为调用静态方法以利用缓存
         self.embedding_model = self._load_embedding_model_cached()
