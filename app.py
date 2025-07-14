@@ -34,7 +34,7 @@ class DocumentProcessor:
 
 # 改进设置页面主题函数
 def set_page_theme():
-    # 升级后的CSS样式
+    # 在现有CSS基础上添加修复
     st.markdown("""
     <style>
         /* 全局样式 */
@@ -383,19 +383,8 @@ def set_page_theme():
             white-space: nowrap;
         }
         
-        /* 响应式调整 */
+        /* 响应式调整改进 */
         @media (max-width: 768px) {
-            .main-header {
-                font-size: 2rem;
-                padding: 1rem 0;
-            }
-            .metrics-value {
-                font-size: 1.2rem;
-            }
-            .answer-container {
-                padding: 1.5rem;
-            }
-            
             .footer-flex {
                 flex-direction: column;
                 gap: 5px;
@@ -816,3 +805,6 @@ def main():
     </div>
     """, unsafe_allow_html=True)
     
+# 确保只有在作为主模块运行时才调用main函数
+if __name__ == "__main__":
+    main()
