@@ -10,16 +10,48 @@ import streamlit as st  # 添加streamlit导入
 
 
 class RAGSystem:
-    def __init__(self, vector_db_path="vector_db_manual"):
-        self.vector_db_path = vector_db_path
-        
-        self.api_url = "https://qianfan.baidubce.com/v2/chat/completions"
-        self.headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer bce-v3/ALTAK-tTXXQUFQTzD0wmpZaZcw8/6339a986fa067a766bb5cb45e94ec619443829d3',
-            'appid': 'app-0uIqZTDX'
-        }
-        self.model = "ernie-3.5-8k"
+    def __init__(self, vector_db_path: str):
+        """初始化RAG系统"""
+        try:
+            self.vector_db_path = vector_db_path
+            print(f"尝试从{vector_db_path}加载向量数据库")
+            
+            # 检查向量数据库路径是否存在
+            if not os.path.exists(vector_db_path):
+                print(f"警告: 向量数据库路径不存在: {vector_db_path}")
+                os.makedirs(vector_db_path, exist_ok=True)
+                print(f"已创建向量数据库目录: {vector_db_path}")
+            
+            # 检查index.faiss文件是否存在
+            faiss_path = os.path.join(vector_db_path, "index.faiss")
+            if not os.path.exists(faiss_path):
+                print(f"警告: FAISS索引文件不存在: {faiss_path}")
+                self.vector_db = None
+            else:
+                # 尝试加载向量数据库
+                self.vector_db = FAISS.load_local(vector_db_path, embeddings)
+                
+                # 验证向量数据库是否成功加载
+                if not self.vector_db.index:
+                    print("警告: 加载了向量数据库，但索引为空")
+                else:
+                    print(f"向量数据库成功加载，包含{self.vector_db.index.ntotal}个向量")
+                    
+            # API配置
+            self.api_url = "https://qianfan.baidubce.com/v2/chat/completions"
+            self.headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer bce-v3/ALTAK-tTXXQUFQTzD0wmpZaZcw8/6339a986fa067a766bb5cb45e94ec619443829d3',
+                'appid': 'app-0uIqZTDX'
+            }
+            
+        except Exception as e:
+            print(f"初始化RAG系统时出错: {e}")
+            import traceback
+            traceback.print_exc()
+            self.vector_db = None
+            # 不抛出异常，让系统继续运行，只是没有知识库支持
+            print("将以无知识库模式运行")
         
         # 修改为调用静态方法以利用缓存
         self.embedding_model = self._load_embedding_model_cached()
@@ -117,7 +149,7 @@ class RAGSystem:
                     
                     def get_sentence_embedding_dimension(self):
                         return self.dimension
-                
+    
                 return SimpleEmbedder()
     
     def _load_vector_db(self):
@@ -236,65 +268,51 @@ class RAGSystem:
             print(f"创建索引失败: {str(e)}")
             raise
     
-    def retrieve(self, query: str, top_k: int = 3) -> List[Dict[str, Any]]:
+    def retrieve(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         """检索与查询相关的文档"""
-        if not hasattr(self, 'index') or self.index is None:
-            print("警告: 索引未初始化，无法执行检索")
-            return []
-        
         try:
-            start_time = time.time()
+            # 如果没有加载向量数据库，返回空列表
+            if not self.vector_db:
+                print("警告: 向量数据库未加载")
+                return []
             
-            # 向量化查询
-            if self.embedding_model:
-                query_vector = self.embedding_model.encode(query).reshape(1, -1).astype('float32')
-            else:
-                # 如果没有embedding模型，使用随机向量（仅用于测试）
-                print("警告: 没有embedding模型，使用随机向量")
-                import numpy as np
-                query_vector = np.random.rand(1, self.index.d).astype('float32')
-                # 标准化向量
-                faiss.normalize_L2(query_vector)
+            print(f"执行查询: {query}")
             
-            # 检查向量维度是否与索引匹配
-            if query_vector.shape[1] != self.index.d:
-                print(f"警告: 查询向量维度 ({query_vector.shape[1]}) 与索引维度 ({self.index.d}) 不匹配")
-                # 尝试调整向量维度
-                if query_vector.shape[1] > self.index.d:
-                    query_vector = query_vector[:, :self.index.d]
+            # 增加返回的文档数量，从5增加到8
+            results = self.vector_db.similarity_search_with_score(
+                query=query,
+                k=8  # 增加检索文档数量
+            )
+            
+            contexts = []
+            for doc, score in results:
+                # 转换分数为相似度（假设score是欧几里得距离，越小越好）
+                # 这里对不同的距离度量需要不同的转换方式
+                if score > 1:  # 可能是距离而非相似度
+                    similarity = 1 / (1 + score)  # 转换为0-1的相似度
                 else:
-                    # 扩展向量维度
-                    padded = np.zeros((1, self.index.d), dtype='float32')
-                    padded[:, :query_vector.shape[1]] = query_vector
-                    query_vector = padded
-                # 重新标准化
-                faiss.normalize_L2(query_vector)
+                    similarity = 1 - score  # 假设是标准化后的距离
+                
+                # 构建上下文字典
+                context = {
+                    "content": doc.page_content,
+                    "title": doc.metadata.get("title", "未知标题"),
+                    "path": doc.metadata.get("path", "未知路径"),
+                    "similarity": similarity,
+                    "score": score
+                }
+                contexts.append(context)
+                
+            # 调试输出
+            print(f"检索到{len(contexts)}个文档")
+            for i, ctx in enumerate(contexts):
+                sim = ctx.get("similarity", 0)
+                print(f"  文档 {i+1}: 相似度={sim:.3f}, 标题={ctx.get('title')}")
             
-            # 搜索相似文档
-            distances, indices = self.index.search(query_vector, min(top_k, len(self.texts)))
-            
-            results = []
-            for i, idx in enumerate(indices[0]):
-                if idx >= 0 and idx < len(self.texts) and self.texts[idx].strip():
-                    metadata = self.metadata_list[idx] if idx < len(self.metadata_list) else {}
-                    
-                    # 修改返回结果的结构，使其与_build_prompt方法兼容
-                    result = {
-                        "content": self.texts[idx],
-                        "text": self.texts[idx],  # 添加text键作为备份
-                        "score": float(1 - distances[0][i]),  # 转换为相似度分数
-                        "similarity": float(1 - distances[0][i]),  # 添加similarity键作为备份
-                        "title": metadata.get("section_title", os.path.basename(metadata.get("path", ""))),
-                        "path": metadata.get("path", "")
-                    }
-                    results.append(result)
-            
-            retrieval_time = time.time() - start_time
-            print(f"检索耗时: {retrieval_time:.3f}秒")
-            
-            return results
+            return contexts
+        
         except Exception as e:
-            print(f"检索错误: {str(e)}")
+            print(f"检索过程中出错: {e}")
             import traceback
             traceback.print_exc()
             return []
@@ -385,8 +403,10 @@ class RAGSystem:
         contexts = self.retrieve(query)
         retrieval_time = time.time() - retrieval_start
         
-        has_good_match = any(ctx.get("similarity", 0) > 0.3 for ctx in contexts)
+        # 降低相关性判断的阈值，从0.3降到0.15
+        has_good_match = any(ctx.get("similarity", 0) > 0.15 for ctx in contexts)
         
+        # 检查是否有任何检索结果
         if not contexts:
             return {
                 "answer": "抱歉，知识库中没有找到与您问题相关的信息。",
@@ -405,19 +425,30 @@ class RAGSystem:
         answer = self.generate(query, contexts)
         generation_time = time.time() - generation_start
         
-        # 修复这里的metadata访问问题
+        # 修复metadata访问问题
         sources = []
         for context in contexts:
-            # 直接从context中获取信息，不再依赖metadata键
-            source = {
-                "title": context.get("title", "未知标题"),
-                "path": context.get("path", "未知来源"),
-                "similarity": context.get("similarity", context.get("score", 0))
-            }
-            sources.append(source)
+            try:
+                # 尝试从不同位置获取所需的字段
+                title = context.get("title") or context.get("metadata", {}).get("title") or "未知标题"
+                path = context.get("path") or context.get("metadata", {}).get("path") or "未知来源"
+                similarity = context.get("similarity", context.get("score", context.get("distance", 0)))
+                
+                # 确保添加所有可用的字段
+                source = {
+                    "title": title,
+                    "path": path,
+                    "similarity": similarity,
+                    "content": context.get("content", context.get("page_content", ""))
+                }
+                sources.append(source)
+            except Exception as e:
+                print(f"处理检索结果时出错: {e}, context: {context}")
+                # 添加一个基本的源信息，即使出错
+                sources.append({"title": "处理错误", "content": str(context)[:100], "similarity": 0})
         
-        # 如果相关性较低，添加免责声明
-        if not has_good_match:
+        # 只有当真正没有好的匹配时，才添加免责声明
+        if not has_good_match and len(contexts) > 0:
             answer = f"【注意：知识库中没有找到与您问题直接相关的信息，以下回答基于AI的通用知识，可能不完全准确】\n\n{answer}"
         
         return {
