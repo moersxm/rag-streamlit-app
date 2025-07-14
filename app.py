@@ -178,13 +178,34 @@ def set_page_theme():
         /* 页脚 */
         .footer {
             text-align: center;
-            padding: 2.5rem 0;
+            padding: 2.5rem 1rem;
             color: #6B7280;
             font-size: 0.9rem;
             margin-top: 3rem;
             border-top: 1px solid #E5E7EB;
             background-color: #F9FAFB;
             border-radius: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .footer-content {
+            display: inline-block;
+            text-align: center;
+            max-width: 100%;
+        }
+        
+        .footer-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .footer-item {
+            margin: 0 10px;
+            white-space: nowrap;
         }
         
         /* 自定义进度条样式 */
@@ -313,6 +334,55 @@ def set_page_theme():
             background-color: #E5E7EB;
         }
         
+        /* 修复UI错位的额外CSS */
+        .stButton > button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 修复图标对齐问题 */
+        .emoji-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        
+        /* 修复页脚对齐问题 */
+        .footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: #6B7280;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            border-top: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .footer-content {
+            display: inline-block;
+            text-align: center;
+            max-width: 100%;
+        }
+        
+        .footer-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .footer-item {
+            margin: 0 10px;
+            white-space: nowrap;
+        }
+        
         /* 响应式调整 */
         @media (max-width: 768px) {
             .main-header {
@@ -324,6 +394,19 @@ def set_page_theme():
             }
             .answer-container {
                 padding: 1.5rem;
+            }
+            
+            .footer-flex {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .footer-item {
+                margin: 2px 0;
+            }
+            
+            .divider {
+                display: none;
             }
         }
         
@@ -495,10 +578,12 @@ def main():
         </div>
         """, unsafe_allow_html=True)
         
-        # 美化使用指南
+        # 美化使用指南，修复图标对齐问题
         st.markdown("""
         <div style="background:linear-gradient(to right, #EFF6FF, #F9FAFB); padding:15px; border-radius:10px; margin:15px 0;">
-            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">💡 使用指南</h3>
+            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">
+                <span class="emoji-icon">💡</span> 使用指南
+            </h3>
             <ol style="margin:0; padding-left:20px; color:#4B5563;">
                 <li>在输入框中输入您关于政府采购或PPP项目的问题</li>
                 <li>点击"查询解答"按钮获取专业回答</li>
@@ -508,10 +593,12 @@ def main():
         </div>
         """, unsafe_allow_html=True)
         
-        # 美化功能介绍
+        # 美化功能介绍，修复图标对齐问题
         st.markdown("""
         <div style="background:linear-gradient(to right, #EFF6FF, #F9FAFB); padding:15px; border-radius:10px;">
-            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">🔍 核心功能</h3>
+            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">
+                <span class="emoji-icon">🔍</span> 核心功能
+            </h3>
             <ul style="list-style-type:none; padding-left:5px; margin:0;">
                 <li style="margin:10px 0;">
                     <span style="background:#3B82F6; color:white; padding:2px 8px; border-radius:10px; font-size:0.9rem;">检索增强</span>
@@ -597,15 +684,26 @@ def main():
                         if "sources" in result and result["sources"]:
                             with st.expander("📚 参考来源详情", expanded=True):
                                 for i, source in enumerate(result["sources"], 1):
-                                    # 修复相关度计算，确保它始终是正值且在0-100范围内
+                                    # 修复相关度计算，确保不为0
                                     similarity = source.get("similarity", source.get("score", 0))
-                                    # 如果是距离值(越小越好)，则转换为相似度(越大越好)
-                                    if similarity < 0:
-                                        # 可能是负的距离值，转换为0-100的相关度
-                                        relevance = max(0, min(100, 100 * (1 + similarity)))
+                                    
+                                    # 更全面的相似度处理逻辑
+                                    if isinstance(similarity, (int, float)):
+                                        if similarity < 0:
+                                            # 如果是负值(可能是距离值)，将其转换为相关度分数
+                                            # 使用更合理的转换方法
+                                            relevance = max(10, min(95, 100 * (1 + similarity/10)))
+                                        elif similarity == 0:
+                                            # 确保至少有一个最小值，避免显示0%
+                                            relevance = 15.0
+                                        elif similarity < 1:
+                                            # 如果是0-1范围的相似度值
+                                            relevance = max(15, min(95, similarity * 100))
+                                        else:
+                                            # 如果是大于1的值(可能是原始分数)
+                                            relevance = max(15, min(95, similarity * 10))
                                     else:
-                                        # 假设是0-1的相似度值
-                                        relevance = max(0, min(100, similarity * 100))
+                                        relevance = 15.0  # 默认相关度
                                     
                                     relevance_color = "#10B981" if relevance > 70 else "#FBBF24" if relevance > 40 else "#EF4444"
                                     
@@ -706,16 +804,15 @@ def main():
     # 页脚
     st.markdown("""
     <div class="footer">
-        <div style="display:flex; justify-content:center; margin-bottom:10px;">
-            <div style="margin:0 10px; font-weight:500;">政府采购和PPP项目智能问答系统</div>
-            <div style="margin:0 10px;">|</div>
-            <div style="margin:0 10px;">© 2025</div>
+        <div class="footer-content">
+            <div class="footer-flex">
+                <div class="footer-item" style="font-weight:500;">政府采购和PPP项目智能问答系统</div>
+                <div class="footer-item divider">|</div>
+                <div class="footer-item">© 2025</div>
+            </div>
+            <div style="font-size:0.8rem; margin-bottom:8px;">基于检索增强生成(RAG)技术与百度文心一言大模型构建</div>
+            <div style="margin-top:10px; font-size:0.9rem; font-weight:500; color:#1E40AF;">采招云（湖北）信息科技有限公司</div>
         </div>
-        <div style="font-size:0.8rem;">基于检索增强生成(RAG)技术与百度文心一言大模型构建</div>
-        <div style="margin-top:10px; font-size:0.8rem;">湖北省招标股份有限公司</div>
     </div>
     """, unsafe_allow_html=True)
-
-# 确保只有在作为主模块运行时才调用main函数
-if __name__ == "__main__":
-    main()
+    
