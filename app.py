@@ -642,19 +642,19 @@ def main():
                                 st.markdown(f"<div class='metrics-value'>{metrics.get('total_time', 0):.3f}秒</div>", unsafe_allow_html=True)
                                 st.markdown("</div>", unsafe_allow_html=True)
                 
-                # 保存到历史记录
-                if 'history' not in st.session_state:
-                    st.session_state.history = []
-                
-                st.session_state.history.append({
-                    "query": query,
-                    "result": result,
-                    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                })
-                
-            except Exception as e:
-                st.error(f"处理问题时出错: {str(e)}")
-                st.exception(e)
+                    # 保存到历史记录
+                    if 'history' not in st.session_state:
+                        st.session_state.history = []
+                    
+                    st.session_state.history.append({
+                        "query": query,
+                        "result": result,
+                        "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    })
+                    
+                except Exception as e:
+                    st.error(f"处理问题时出错: {str(e)}")
+                    st.exception(e)
 
 # 显示历史问答记录
 if st.session_state.get('history'):
