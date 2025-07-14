@@ -26,56 +26,87 @@ class RAGSystem:
         self._load_vector_db()
     
     def _load_vector_db(self):
-        """加载或创建向量数据库"""
         metadata_path = os.path.join(self.vector_db_path, "metadata.json")
         try:
-            # 检查元数据文件是否存在
-            if not os.path.exists(metadata_path):
-                print(f"元数据文件不存在: {metadata_path}，将创建空的元数据文件")
-                with open(metadata_path, 'w', encoding='utf-8') as f:
-                    json.dump([], f)
-                self.metadata_list = []
-                self.texts = []
-            else:
-                # 加载元数据
-                with open(metadata_path, "r", encoding="utf-8") as f:
-                    self.metadata_list = json.load(f)
-                print(f"已加载 {len(self.metadata_list)} 条元数据记录")
-                
-                # 加载文本内容
-                self.texts = []
-                for item in self.metadata_list:
-                    text_path = item.get("path")
-                    if text_path and os.path.exists(text_path):
-                        try:
-                            with open(text_path, "r", encoding="utf-8") as f:
-                                self.texts.append(f.read())
-                        except Exception as e:
-                            print(f"读取文件失败 {text_path}: {e}")
-                            self.texts.append("")
-                    else:
-                        print(f"文件不存在: {text_path}")
-                        self.texts.append("")
-            
-            # 检查索引文件是否存在
-            index_path = os.path.join(self.vector_db_path, "index.faiss")
-            if os.path.exists(index_path):
-                try:
-                    print(f"从文件加载向量索引: {index_path}")
-                    self.index = faiss.read_index(index_path)
-                    print(f"已加载向量索引，维度: {self.index.d}")
-                except Exception as e:
-                    print(f"加载索引失败: {e}")
-                    print("将创建新的索引")
-                    self._create_vector_index()
-            else:
-                print(f"索引文件不存在: {index_path}")
-                print("将创建新的索引")
-                self._create_vector_index()
+            with open(metadata_path, "r", encoding="utf-8") as f:
+                self.metadata_list = json.load(f)
+            print(f"已加载 {len(self.metadata_list)} 条元数据记录")
+        except FileNotFoundError:
+            raise FileNotFoundError(f"元数据文件不存在: {metadata_path}")
         
-        except Exception as e:
-            raise RuntimeError(f"加载向量数据库失败: {str(e)}")
-
+        self.texts = []
+        missing_files = []
+        
+        for item in self.metadata_list:
+            text_path = item.get("path")
+            if text_path:
+                # 修复路径分隔符问题，使其在各操作系统上兼容
+                # 首先将Windows风格路径转换为系统无关的路径部分
+                path_parts = text_path.replace('\\', '/').split('/')
+                # 然后使用os.path.join重建路径
+                normalized_path = os.path.join(self.vector_db_path, *path_parts)
+                
+                # 尝试直接从向量数据库根目录读取
+                direct_path = os.path.join(os.path.dirname(self.vector_db_path), text_path.replace('\\', os.sep))
+                
+                # 尝试不同的路径组合
+                possible_paths = [
+                    normalized_path,
+                    direct_path,
+                    os.path.join(os.path.dirname(self.vector_db_path), *path_parts),
+                    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), *path_parts)
+                ]
+                
+                file_found = False
+                for possible_path in possible_paths:
+                    if os.path.exists(possible_path):
+                        try:
+                            with open(possible_path, "r", encoding="utf-8") as f:
+                                self.texts.append(f.read())
+                            file_found = True
+                            # 更新路径为正确的路径
+                            item["path"] = possible_path
+                            break
+                        except Exception as e:
+                            print(f"尝试读取文件失败 {possible_path}: {e}")
+                
+                if not file_found:
+                    print(f"文件不存在: {text_path}，尝试过的路径: {possible_paths}")
+                    missing_files.append(text_path)
+                    self.texts.append("")
+            else:
+                self.texts.append("")
+        
+        # 如果有文件缺失，显示警告
+        if missing_files:
+            print(f"警告: {len(missing_files)} 个文件未找到，这可能会影响搜索结果")
+            for i, missing in enumerate(missing_files[:10]):  # 只显示前10个
+                print(f"  - 缺失文件 {i+1}: {missing}")
+            if len(missing_files) > 10:
+                print(f"  - 另有 {len(missing_files) - 10} 个文件未显示")
+        
+        # 加载索引文件
+        index_path = os.path.join(self.vector_db_path, "index.faiss")
+        if os.path.exists(index_path):
+            try:
+                print("正在加载预计算的向量索引...")
+                self.index = faiss.read_index(index_path)
+                print(f"已加载向量索引，维度: {self.index.d}")
+            except Exception as e:
+                print(f"加载索引失败: {e}")
+                if self.embedding_model:
+                    print("将重新创建索引...")
+                    self._create_vector_index()
+                else:
+                    raise RuntimeError("无法加载向量索引且无法创建新索引，因为嵌入模型加载失败")
+        else:
+            print("向量索引不存在")
+            if self.embedding_model:
+                print("创建新索引...")
+                self._create_vector_index()
+            else:
+                raise RuntimeError("向量索引不存在且无法创建新索引，因为嵌入模型加载失败")
+    
     def _create_vector_index(self):
         """创建新的向量索引"""
         print("创建新的向量索引")

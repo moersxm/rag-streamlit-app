@@ -202,6 +202,64 @@ def main():
                 json.dump([], f)
             st.info("已创建空的元数据文件。请添加文档数据后重启应用。")
     
+    # 检查并修复metadata.json中的文件路径
+    try:
+        metadata_path = os.path.join(vector_db_path, "metadata.json")
+        if os.path.exists(metadata_path):
+            # 加载元数据
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                metadata_list = json.load(f)
+            
+            # 检查manual_chunks目录是否存在
+            manual_chunks_dir = os.path.join(base_dir, "manual_chunks")
+            if not os.path.exists(manual_chunks_dir):
+                st.warning(f"文档目录不存在: {manual_chunks_dir}")
+                os.makedirs(manual_chunks_dir, exist_ok=True)
+            
+            # 列出实际存在的文件
+            existing_files = {}
+            for root, _, files in os.walk(manual_chunks_dir):
+                for file in files:
+                    rel_path = os.path.join(os.path.relpath(root, base_dir), file)
+                    existing_files[rel_path] = os.path.join(root, file)
+                    # 也添加使用不同分隔符的路径
+                    existing_files[rel_path.replace(os.sep, '\\')] = os.path.join(root, file)
+                    existing_files[rel_path.replace(os.sep, '/')] = os.path.join(root, file)
+            
+            # 检查元数据中的文件路径
+            path_fixed = False
+            for item in metadata_list:
+                if "path" in item:
+                    path = item["path"]
+                    
+                    # 尝试修复路径
+                    if path not in existing_files:
+                        # 提取文件名
+                        filename = os.path.basename(path.replace('\\', os.sep))
+                        
+                        # 查找匹配的文件
+                        matching_files = [f for f in existing_files.keys() if f.endswith(filename)]
+                        
+                        if matching_files:
+                            # 使用找到的第一个匹配文件
+                            item["path"] = existing_files[matching_files[0]]
+                            path_fixed = True
+                            print(f"已修复路径: {path} -> {item['path']}")
+                        else:
+                            print(f"无法找到匹配文件: {path}")
+                    else:
+                        # 使用实际路径
+                        item["path"] = existing_files[path]
+            
+            # 如果修复了路径，保存更新后的元数据
+            if path_fixed:
+                with open(metadata_path, 'w', encoding='utf-8') as f:
+                    json.dump(metadata_list, f, ensure_ascii=False, indent=2)
+                print("已保存修复后的元数据文件")
+    
+    except Exception as e:
+        st.warning(f"检查文件路径时出错: {str(e)}")
+    
     # 初始化RAG系统
     if 'rag_system' not in st.session_state or st.session_state.get('reload_rag', False):
         with st.spinner("正在加载知识库..."):
