@@ -8,6 +8,8 @@ from typing import List, Dict, Any
 import time
 import streamlit as st  # 添加streamlit导入
 
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 class RAGSystem:
     def __init__(self, vector_db_path: str):
