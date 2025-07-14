@@ -19,7 +19,7 @@ class RAGSystem:
             'Authorization': 'Bearer bce-v3/ALTAK-tTXXQUFQTzD0wmpZaZcw8/6339a986fa067a766bb5cb45e94ec619443829d3',
             'appid': 'app-0uIqZTDX'
         }
-        self.model = "ernie-4.0-8k"
+        self.model = "ernie-3.5-8k"
         
         # 修改为调用静态方法以利用缓存
         self.embedding_model = self._load_embedding_model_cached()
@@ -311,7 +311,7 @@ class RAGSystem:
                 }
             ],
             "web_search": {
-                "enable": False,
+                "enable": True,
                 "enable_citation": False,
                 "enable_trace": False
             }
@@ -337,6 +337,7 @@ class RAGSystem:
             else:
                 print(f"API响应结构: {json.dumps(result, ensure_ascii=False, indent=2)}")
                 return "无法解析API返回结果，请查看日志了解详情。"
+            
         except Exception as e:
             print(f"API调用失败: {e}")
             import traceback
