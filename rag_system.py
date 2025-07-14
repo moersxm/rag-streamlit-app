@@ -318,8 +318,9 @@ class RAGSystem:
         }, ensure_ascii=False)
         
         try:
-            response = requests.post(
-                self.api_url, 
+            response = requests.request(
+                method='POST',
+                url=self.api_url, 
                 headers=self.headers, 
                 data=payload.encode("utf-8")
             )
