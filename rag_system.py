@@ -21,14 +21,17 @@ class RAGSystem:
         }
         self.model = "ernie-3.5-8k"
         
-        self.embedding_model = self.load_embedding_model()
+        # 修改为调用静态方法以利用缓存
+        self.embedding_model = self._load_embedding_model_cached()
         self.embedding_dim = self.embedding_model.get_sentence_embedding_dimension()
         print(f"嵌入向量维度: {self.embedding_dim}")
         
         self._load_vector_db()
     
+    # 将方法拆分为两部分：静态缓存方法和实例方法
+    @staticmethod
     @st.cache_resource
-    def load_embedding_model(self):
+    def _load_embedding_model_cached():
         """缓存加载embedding模型，避免重复加载并处理meta tensor问题"""
         # 确保缓存目录存在
         cache_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "model_cache")
