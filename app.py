@@ -183,16 +183,49 @@ def main():
     
     # 基础目录设置
     base_dir = os.path.dirname(os.path.abspath(__file__))
+    vector_db_path = os.path.join(base_dir, "vector_db_manual")
+    
+    # 检查向量数据库目录是否存在
+    if not os.path.exists(vector_db_path):
+        os.makedirs(vector_db_path, exist_ok=True)
+        st.warning(f"向量数据库目录不存在，已创建新目录: {vector_db_path}")
+    
+    # 检查index.faiss文件是否存在
+    index_path = os.path.join(vector_db_path, "index.faiss")
+    if not os.path.exists(index_path):
+        st.warning("向量索引文件不存在，系统将尝试创建新索引。如果这是首次运行，请确保有足够的数据文件。")
+        
+        # 创建一个空的metadata.json文件以确保初始化不会失败
+        metadata_path = os.path.join(vector_db_path, "metadata.json")
+        if not os.path.exists(metadata_path):
+            with open(metadata_path, 'w', encoding='utf-8') as f:
+                json.dump([], f)
+            st.info("已创建空的元数据文件。请添加文档数据后重启应用。")
     
     # 初始化RAG系统
     if 'rag_system' not in st.session_state or st.session_state.get('reload_rag', False):
         with st.spinner("正在加载知识库..."):
             try:
-                st.session_state.rag_system = RAGSystem(os.path.join(base_dir, "vector_db_manual"))
+                st.session_state.rag_system = RAGSystem(vector_db_path)
                 st.session_state.reload_rag = False
+                st.success("知识库加载成功！")
             except Exception as e:
                 st.error(f"加载RAG系统失败: {str(e)}")
                 st.session_state.rag_system = None
+                
+                # 显示更详细的错误信息和解决方案
+                st.error("""
+                ### 可能的解决方法:
+                1. 确保`vector_db_manual`目录中包含必要的文件
+                2. 检查是否有权限访问该目录
+                3. 如果是首次运行，请先添加文档到知识库
+                4. 尝试重新启动应用
+                """)
+                
+                # 提供一个重载按钮
+                if st.button("尝试重新加载"):
+                    st.session_state.reload_rag = True
+                    st.rerun()
     
     # 创建文档处理器（保留基本功能）
     doc_processor = DocumentProcessor(base_dir)

@@ -26,66 +26,95 @@ class RAGSystem:
         self._load_vector_db()
     
     def _load_vector_db(self):
+        """加载或创建向量数据库"""
         metadata_path = os.path.join(self.vector_db_path, "metadata.json")
         try:
-            with open(metadata_path, "r", encoding="utf-8") as f:
-                self.metadata_list = json.load(f)
-            print(f"已加载 {len(self.metadata_list)} 条元数据记录")
-        except FileNotFoundError:
-            raise FileNotFoundError(f"元数据文件不存在: {metadata_path}")
-        
-        self.texts = []
-        for item in self.metadata_list:
-            text_path = item.get("path")
-            if text_path and os.path.exists(text_path):
-                try:
-                    with open(text_path, "r", encoding="utf-8") as f:
-                        self.texts.append(f.read())
-                except Exception as e:
-                    print(f"读取文件失败 {text_path}: {e}")
-                    self.texts.append("")
+            # 检查元数据文件是否存在
+            if not os.path.exists(metadata_path):
+                print(f"元数据文件不存在: {metadata_path}，将创建空的元数据文件")
+                with open(metadata_path, 'w', encoding='utf-8') as f:
+                    json.dump([], f)
+                self.metadata_list = []
+                self.texts = []
             else:
-                self.texts.append("")
-        
-        index_path = os.path.join(self.vector_db_path, "index.faiss")
-        if os.path.exists(index_path):
-            try:
-                self.index = faiss.read_index(index_path)
-                if self.index.d != self.embedding_dim:
-                    print(f"警告: 索引维度 ({self.index.d}) 与嵌入模型维度 ({self.embedding_dim}) 不匹配，重建索引...")
-                    self._create_vector_index()
-                else:
-                    print(f"已加载向量索引，维度: {self.index.d}")
-            except Exception as e:
-                print(f"加载索引失败: {e}，将重新创建索引")
-                self._create_vector_index()
-        else:
-            print("向量索引不存在，创建新索引...")
-            self._create_vector_index()
-    
-    def _create_vector_index(self):
-        print("正在创建向量索引...")
-        
-        embeddings = []
-        for i, text in enumerate(self.texts):
-            if i % 10 == 0:
-                print(f"处理文档 {i}/{len(self.texts)}...")
+                # 加载元数据
+                with open(metadata_path, "r", encoding="utf-8") as f:
+                    self.metadata_list = json.load(f)
+                print(f"已加载 {len(self.metadata_list)} 条元数据记录")
+                
+                # 加载文本内容
+                self.texts = []
+                for item in self.metadata_list:
+                    text_path = item.get("path")
+                    if text_path and os.path.exists(text_path):
+                        try:
+                            with open(text_path, "r", encoding="utf-8") as f:
+                                self.texts.append(f.read())
+                        except Exception as e:
+                            print(f"读取文件失败 {text_path}: {e}")
+                            self.texts.append("")
+                    else:
+                        print(f"文件不存在: {text_path}")
+                        self.texts.append("")
             
-            if text.strip():
-                embedding = self.embedding_model.encode(text)
-                embeddings.append(embedding)
+            # 检查索引文件是否存在
+            index_path = os.path.join(self.vector_db_path, "index.faiss")
+            if os.path.exists(index_path):
+                try:
+                    print(f"从文件加载向量索引: {index_path}")
+                    self.index = faiss.read_index(index_path)
+                    print(f"已加载向量索引，维度: {self.index.d}")
+                except Exception as e:
+                    print(f"加载索引失败: {e}")
+                    print("将创建新的索引")
+                    self._create_vector_index()
             else:
-                embeddings.append(np.zeros(self.embedding_dim))
+                print(f"索引文件不存在: {index_path}")
+                print("将创建新的索引")
+                self._create_vector_index()
         
-        embeddings = np.array(embeddings).astype('float32')
+        except Exception as e:
+            raise RuntimeError(f"加载向量数据库失败: {str(e)}")
+
+    def _create_vector_index(self):
+        """创建新的向量索引"""
+        print("创建新的向量索引")
+        if not self.texts or len(self.texts) == 0:
+            print("警告: 没有文本数据，将创建空索引")
+            # 创建一个空的索引
+            self.index = faiss.IndexFlatL2(self.embedding_dim)
+            return
         
-        self.index = faiss.IndexFlatL2(self.embedding_dim)
-        self.index.add(embeddings)
+        # 从文本创建向量
+        try:
+            print(f"为 {len(self.texts)} 条文本创建向量...")
+            vectors = []
+            for text in self.texts:
+                if text.strip():  # 确保文本不为空
+                    vector = self.embedding_model.encode(text)
+                    vectors.append(vector)
+                else:
+                    # 对于空文本，使用零向量
+                    vectors.append(np.zeros(self.embedding_dim))
+            
+            # 转换为numpy数组
+            vectors = np.array(vectors).astype('float32')
+            
+            # 创建并保存索引
+            print(f"创建FAISS索引，向量数量: {len(vectors)}, 维度: {self.embedding_dim}")
+            self.index = faiss.IndexFlatL2(self.embedding_dim)
+            if len(vectors) > 0:
+                self.index.add(vectors)
+            
+            # 保存索引到文件
+            index_path = os.path.join(self.vector_db_path, "index.faiss")
+            print(f"保存索引到: {index_path}")
+            faiss.write_index(self.index, index_path)
+            print("索引创建和保存成功")
         
-        os.makedirs(self.vector_db_path, exist_ok=True)
-        index_path = os.path.join(self.vector_db_path, "index.faiss")
-        faiss.write_index(self.index, index_path)
-        print(f"向量索引已保存至: {index_path}")
+        except Exception as e:
+            print(f"创建索引失败: {str(e)}")
+            raise
     
     def retrieve(self, query: str, top_k: int = 3) -> List[Dict[str, Any]]:
         query_vector = self.embedding_model.encode(query).reshape(1, -1).astype('float32')
