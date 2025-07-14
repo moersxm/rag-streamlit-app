@@ -581,10 +581,14 @@ def main():
                         
                         # 检查是否是来自知识库外的回答
                         if "【注意：知识库中没有找到与您问题直接相关的信息" in result["answer"]:
-                            # 分离免责声明和实际回答
-                            disclaimer, answer_text = result["answer"].split("\n\n", 1)
-                            st.markdown(f"<div class='disclaimer-box'>{disclaimer}</div>", unsafe_allow_html=True)
-                            st.markdown(answer_text)
+                            try:
+                                # 分离免责声明和实际回答
+                                disclaimer, answer_text = result["answer"].split("\n\n", 1)
+                                st.markdown(f"<div class='disclaimer-box'>{disclaimer}</div>", unsafe_allow_html=True)
+                                st.markdown(answer_text)
+                            except ValueError:
+                                # 如果无法拆分，直接显示完整回答
+                                st.markdown(result["answer"])
                         else:
                             st.markdown(result["answer"])
                         st.markdown("</div>", unsafe_allow_html=True)
@@ -654,7 +658,9 @@ def main():
                     
                 except Exception as e:
                     st.error(f"处理问题时出错: {str(e)}")
+                    import traceback
                     st.exception(e)
+                    st.error(f"详细错误信息: {traceback.format_exc()}")
 
 # 显示历史问答记录
 if st.session_state.get('history'):
