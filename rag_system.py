@@ -404,15 +404,20 @@ class RAGSystem:
         answer = self.generate(query, contexts)
         generation_time = time.time() - generation_start
         
+        # 修复这里的metadata访问问题
         sources = []
         for context in contexts:
-            metadata = context["metadata"]
+            # 直接从context中获取信息，不再依赖metadata键
             source = {
-                "title": metadata.get("section_title") or metadata.get("title") or "未知标题",
-                "path": metadata.get("path", "未知来源"),
-                "similarity": context["similarity"]
+                "title": context.get("title", "未知标题"),
+                "path": context.get("path", "未知来源"),
+                "similarity": context.get("similarity", context.get("score", 0))
             }
             sources.append(source)
+        
+        # 如果相关性较低，添加免责声明
+        if not has_good_match:
+            answer = f"【注意：知识库中没有找到与您问题直接相关的信息，以下回答基于AI的通用知识，可能不完全准确】\n\n{answer}"
         
         return {
             "answer": answer,
