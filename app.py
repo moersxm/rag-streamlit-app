@@ -804,7 +804,7 @@ def main():
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
 # 确保只有在作为主模块运行时才调用main函数
 if __name__ == "__main__":
     main()
