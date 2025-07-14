@@ -32,148 +32,287 @@ class DocumentProcessor:
         with open(self.metadata_path, 'w', encoding='utf-8') as f:
             json.dump(metadata_list, f, ensure_ascii=False, indent=2)
 
-# 设置页面主题
+# 改进设置页面主题函数
 def set_page_theme():
-    # 自定义CSS样式
+    # 升级后的CSS样式
     st.markdown("""
     <style>
-        .main-header {
-            font-size: 2.5rem;
-            color: #1E3A8A;
-            margin-bottom: 1rem;
-            text-align: center;
-            padding: 1.5rem 0;
-            border-bottom: 2px solid #E5E7EB;
-        }
-        .sub-header {
-            font-size: 1.8rem;
-            color: #1E3A8A;
-            margin: 1.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #E5E7EB;
-        }
-        .answer-container {
-            background-color: #F3F4F6;
-            padding: 1.8rem;
-            border-radius: 0.5rem;
-            margin: 1.2rem 0;
-            border-left: 5px solid #3B82F6;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 1.05rem;
+        /* 全局样式 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            color: #1F2937;
             line-height: 1.6;
         }
-        .answer-header {
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: #1E3A8A;
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Sans+SC', sans-serif;
+            font-weight: 700;
         }
+        
+        /* 主标题 */
+        .main-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1E40AF;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #E5E7EB;
+            background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease;
+        }
+        
+        /* 子标题 */
+        .sub-header {
+            font-size: 1.8rem;
+            color: #1E40AF;
+            margin: 1.8rem 0 1.2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E5E7EB;
+            font-weight: 600;
+        }
+        
+        /* 回答容器 */
+        .answer-container {
+            background-color: #F9FAFB;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #3B82F6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .answer-container:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+        
+        .answer-header {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1E40AF;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.8rem;
+        }
+        
+        /* 信息文本 */
         .info-text {
             color: #4B5563;
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            padding: 0.5rem 0;
         }
+        
         .highlight-text {
-            color: #1E3A8A;
-            font-weight: bold;
+            color: #1E40AF;
+            font-weight: 600;
+            background: linear-gradient(90deg, #1E40AF 0%, #3B82F6 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.3rem;
+            color: white;
         }
+        
+        /* 来源容器 */
         .source-title {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #1E3A8A;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1E40AF;
         }
+        
         .source-container {
             border: 1px solid #E5E7EB;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 0.8rem;
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
             background-color: #FAFAFA;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
         }
+        
+        .source-container:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-color: #D1D5DB;
+        }
+        
+        /* 指标卡片 */
         .metrics-card {
-            background-color: #F9FAFB;
-            padding: 1rem;
-            border-radius: 0.5rem;
+            background: linear-gradient(145deg, #F9FAFB, #F3F4F6);
+            padding: 1.2rem;
+            border-radius: 0.8rem;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(209, 213, 219, 0.5);
+            height: 100%;
         }
+        
         .metrics-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.15);
+            border-color: #3B82F6;
         }
+        
         .metrics-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #4B5563;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
+        
         .metrics-value {
-            font-size: 1.3rem;
-            color: #1E3A8A;
-            font-weight: bold;
+            font-size: 1.5rem;
+            color: #1E40AF;
+            font-weight: 700;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.05);
         }
+        
+        /* 页脚 */
         .footer {
             text-align: center;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             color: #6B7280;
-            font-size: 0.8rem;
-            margin-top: 2rem;
+            font-size: 0.9rem;
+            margin-top: 3rem;
             border-top: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
         }
+        
         /* 自定义进度条样式 */
         .stProgress > div > div > div > div {
-            background-color: #3B82F6;
+            background: linear-gradient(90deg, #2563EB, #60A5FA);
         }
+        
         /* 自定义按钮样式 */
         .stButton button {
-            background-color: #1E3A8A;
+            background: linear-gradient(90deg, #1E40AF, #3B82F6);
             color: white;
             border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
             border: none;
             transition: all 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        
         .stButton button:hover {
-            background-color: #2563EB;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #1E40AF, #2563EB);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
-        /* 自定义侧边栏样式 */
-        .css-1d391kg {
-            background-color: #F9FAFB;
-        }
-        /* 文本区域样式改进 */
+        
+        /* 自定义文本区域样式 */
         textarea {
-            border-radius: 0.5rem !important;
-            border-color: #D1D5DB !important;
+            border-radius: 0.8rem !important;
+            border: 2px solid #D1D5DB !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
         }
+        
         textarea:focus {
             border-color: #3B82F6 !important;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+            transform: translateY(-2px);
         }
+        
         /* 历史记录样式 */
         .history-item {
             border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 1rem;
+            padding: 1rem;
             margin-bottom: 1rem;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
         }
+        
+        .history-item:hover {
+            background-color: #F3F4F6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
         .history-question {
-            font-weight: bold;
+            font-weight: 600;
             color: #1F2937;
             margin-bottom: 0.5rem;
         }
+        
         .history-answer {
             color: #4B5563;
         }
+        
         /* 提示信息样式 */
         .notice-box {
             background-color: #EFF6FF;
             border-left: 5px solid #3B82F6;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0.3rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .notice-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0) 70%);
+            z-index: 0;
+        }
+        
+        .notice-box p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 问题显示样式 */
+        .question-box {
+            padding: 1rem;
+            background-color: #F3F4F6;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #6B7280;
+        }
+        
+        /* 免责声明样式 */
+        .disclaimer-box {
+            color: #B91C1C;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background-color: #FEF2F2;
+            border-radius: 0.5rem;
+            border-left: 4px solid #DC2626;
+            line-height: 1.5;
+        }
+        
+        /* 自定义扩展器样式 */
+        .streamlit-expanderHeader {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1E40AF;
+            background-color: #F3F4F6;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .streamlit-expanderHeader:hover {
+            background-color: #E5E7EB;
+        }
+        
         /* 响应式调整 */
         @media (max-width: 768px) {
             .main-header {
@@ -181,16 +320,46 @@ def set_page_theme():
                 padding: 1rem 0;
             }
             .metrics-value {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+            }
+            .answer-container {
+                padding: 1.5rem;
             }
         }
+        
         /* 添加动画效果 */
-        .answer-container {
-            animation: fadeIn 0.5s ease-in-out;
-        }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .answer-container {
+            animation: slideIn 0.5s ease-in-out;
+        }
+        
+        /* 添加滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #F3F4F6;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
         }
     </style>
     """, unsafe_allow_html=True)
@@ -316,77 +485,105 @@ def main():
     
     # 侧边栏
     with st.sidebar:
-        st.title("政府采购和PPP项目智能问答")
-        st.image("https://img.huxiucdn.com/article/content/202306/05/222152647073.jpg", use_column_width=True)
+        st.title("🏛️ 政府采购与PPP智能咨询")
         
-        st.markdown("### 使用指南")
+        # 使用更美观的图片显示
         st.markdown("""
-        <div class="info-text">
-        1. 在文本框中输入您的问题
-        2. 点击"提交问题"按钮
-        3. 系统将检索相关文档并生成回答
-        4. 可查看参考来源和系统性能指标
+        <div style="text-align:center; padding:10px;">
+            <img src="https://img.huxiucdn.com/article/content/202306/05/222152647073.jpg" style="max-width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+            <p style="font-size:0.8rem; color:#6B7280; margin-top:5px;">基于百度文心一言大模型提供服务</p>
         </div>
         """, unsafe_allow_html=True)
         
-        # 更新功能描述
-        st.markdown("### 功能介绍")
-        st.markdown("""        
-        <div class="info-text">
-        <span class="highlight-text">智能问答功能</span>：针对政府采购和PPP项目的专业问答系统
+        # 美化使用指南
+        st.markdown("""
+        <div style="background:linear-gradient(to right, #EFF6FF, #F9FAFB); padding:15px; border-radius:10px; margin:15px 0;">
+            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">💡 使用指南</h3>
+            <ol style="margin:0; padding-left:20px; color:#4B5563;">
+                <li>在输入框中输入您关于政府采购或PPP项目的问题</li>
+                <li>点击"查询解答"按钮获取专业回答</li>
+                <li>查看参考来源了解信息出处</li>
+                <li>历史记录中可查看之前的问答内容</li>
+            </ol>
         </div>
         """, unsafe_allow_html=True)
         
-        # 保留系统状态检查等其他功能
-        # ...
+        # 美化功能介绍
+        st.markdown("""
+        <div style="background:linear-gradient(to right, #EFF6FF, #F9FAFB); padding:15px; border-radius:10px;">
+            <h3 style="margin:0 0 10px 0; color:#1E40AF; font-size:1.2rem;">🔍 核心功能</h3>
+            <ul style="list-style-type:none; padding-left:5px; margin:0;">
+                <li style="margin:10px 0;">
+                    <span style="background:#3B82F6; color:white; padding:2px 8px; border-radius:10px; font-size:0.9rem;">检索增强</span>
+                    <span style="margin-left:5px;">从专业文档中精准检索相关内容</span>
+                </li>
+                <li style="margin:10px 0;">
+                    <span style="background:#3B82F6; color:white; padding:2px 8px; border-radius:10px; font-size:0.9rem;">专业解答</span>
+                    <span style="margin-left:5px;">针对政府采购和PPP项目提供专业咨询</span>
+                </li>
+                <li style="margin:10px 0;">
+                    <span style="background:#3B82F6; color:white; padding:2px 8px; border-radius:10px; font-size:0.9rem;">政策解读</span>
+                    <span style="margin-left:5px;">解释最新政府政策法规和实施细则</span>
+                </li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
     
     # 仅保留智能问答功能
-    st.markdown('<h2 class="main-header">政府采购和PPP项目智能问答</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 class="main-header">政府采购和PPP项目智能问答系统</h2>', unsafe_allow_html=True)
 
-    # 添加简短介绍
+    # 添加简短介绍，用更美观的方式展示
     st.markdown("""
     <div class="notice-box">
-        本系统基于湖北省政府采购和PPP项目相关法规和政策文件，可回答相关专业问题。
-        当知识库中没有相关信息时，系统会使用AI通用知识进行回答，并明确标注。
+        <h3 style="margin-top:0; color:#1E40AF; font-size:1.3rem;">系统简介</h3>
+        <p>本系统基于<strong>湖北省政府采购和PPP项目</strong>相关法规和政策文件，应用先进的检索增强生成技术(RAG)，可针对性回答相关专业问题。</p>
+        <p>当知识库中没有查找到相关信息时，系统会切换至AI通用知识模式，同时明确标注来源，保证信息透明度。</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # 智能问答功能实现
-    # 添加输入框和提交按钮
+    # 使用更加美观的提问表单
     with st.form("question_form"):
-        query = st.text_area("请输入您的问题:", height=100, 
-                              placeholder="例如：什么是政府采购？或者 PPP项目的风险如何控制？")
+        # 添加一个图标和标题
+        col_title1, col_title2 = st.columns([1, 20])
+        with col_title1:
+            st.markdown("💬")
+        with col_title2:
+            st.markdown("<h3 style='margin:0; font-size:1.3rem; color:#1E40AF;'>请输入您的专业问题</h3>", unsafe_allow_html=True)
         
-        col1, col2 = st.columns([4, 1])
+        query = st.text_area("", height=120, 
+                           placeholder="例如：什么是政府采购？PPP项目的风险如何控制？政府采购供应商有哪些权利和义务？")
+        
+        col1, col2, col3 = st.columns([3, 3, 2])
         with col1:
-            st.markdown("") # 添加一些间距
-        with col2:
-            submit_button = st.form_submit_button("提交问题")
+            st.markdown("<p class='info-text' style='font-size:0.9rem;'>提示: 问题越具体，回答越准确</p>", unsafe_allow_html=True)
+        with col3:
+            submit_button = st.form_submit_button("🔍 查询解答")
 
     # 处理问题提交
     if submit_button and query:
         if not st.session_state.rag_system:
             st.error("知识库加载失败，无法回答问题。请检查系统状态后重试。")
         else:
-            with st.spinner("正在思考，请稍候..."):
+            with st.spinner("🧠 正在思考中..."):
                 try:
                     # 调用RAG系统获取答案
                     result = st.session_state.rag_system.answer(query)
                     
                     # 显示结果
                     if "answer" in result:
-                        # 显示问题
-                        st.markdown(f"<div class='sub-header'>您的问题：</div>", unsafe_allow_html=True)
-                        st.markdown(f"<div>{query}</div>", unsafe_allow_html=True)
+                        # 显示问题，使用更美观的样式
+                        st.markdown(f"<div class='sub-header'>您的问题</div>", unsafe_allow_html=True)
+                        st.markdown(f"<div class='question-box'>{query}</div>", unsafe_allow_html=True)
                         
                         # 显示回答，添加标题
-                        st.markdown(f"<div class='sub-header'>AI回答：</div>", unsafe_allow_html=True)
+                        st.markdown(f"<div class='sub-header'>专业解答</div>", unsafe_allow_html=True)
                         st.markdown("<div class='answer-container'>", unsafe_allow_html=True)
+                        
                         # 检查是否是来自知识库外的回答
                         if "【注意：知识库中没有找到与您问题直接相关的信息" in result["answer"]:
                             # 分离免责声明和实际回答
                             disclaimer, answer_text = result["answer"].split("\n\n", 1)
-                            st.markdown(f"<div style='color: #E02424; font-weight: bold; margin-bottom: 0.8rem;'>{disclaimer}</div>", unsafe_allow_html=True)
+                            st.markdown(f"<div class='disclaimer-box'>{disclaimer}</div>", unsafe_allow_html=True)
                             st.markdown(answer_text)
                         else:
                             st.markdown(result["answer"])
@@ -394,81 +591,113 @@ def main():
                         
                         # 显示参考来源
                         if "sources" in result and result["sources"]:
-                            with st.expander("参考来源", expanded=True):
+                            with st.expander("📚 参考来源详情", expanded=True):
                                 for i, source in enumerate(result["sources"], 1):
+                                    relevance = source.get("similarity", 0) * 100
+                                    relevance_color = "#10B981" if relevance > 70 else "#FBBF24" if relevance > 40 else "#EF4444"
+                                    
                                     st.markdown(f"<div class='source-container'>", unsafe_allow_html=True)
-                                    st.markdown(f"<div class='source-title'>来源 {i}: {source.get('title', '未知来源')}</div>", unsafe_allow_html=True)
+                                    st.markdown(f"""
+                                    <div style='display:flex; justify-content:space-between; align-items:center;'>
+                                        <div class='source-title'>来源 {i}: {source.get('title', '未知来源')}</div>
+                                        <div style='background-color:{relevance_color}; color:white; padding:2px 8px; border-radius:10px; font-size:0.8rem;'>
+                                            相关度: {relevance:.1f}%
+                                        </div>
+                                    </div>
+                                    """, unsafe_allow_html=True)
                                     
                                     # 显示摘录的内容，限制长度
                                     content = source.get("content", "")
                                     if len(content) > 500:
                                         content = content[:500] + "..."
-                                    st.markdown(content)
+                                    st.markdown(f"<div style='margin-top:0.8rem;'>{content}</div>", unsafe_allow_html=True)
                                     
                                     if "path" in source:
-                                        st.caption(f"文件路径: {source['path']}")
+                                        st.caption(f"📄 文件路径: {source['path']}")
                                     st.markdown("</div>", unsafe_allow_html=True)
                         else:
-                            st.info("未找到相关参考来源")
+                            st.info("⚠️ 未找到相关参考来源")
                         
-                        # 显示性能指标
+                        # 显示性能指标，使用更美观的卡片
                         if "metrics" in result:
-                            st.markdown("<div class='sub-header' style='font-size: 1.2rem;'>性能指标</div>", unsafe_allow_html=True)
+                            st.markdown("<div class='sub-header' style='font-size:1.2rem;'>系统性能指标</div>", unsafe_allow_html=True)
                             metrics = result["metrics"]
                             col1, col2, col3 = st.columns(3)
                             
                             with col1:
                                 st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
-                                st.markdown("<div class='metrics-label'>检索耗时</div>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>⏱️ 检索耗时</div>", unsafe_allow_html=True)
                                 st.markdown(f"<div class='metrics-value'>{metrics.get('retrieval_time', 0):.3f}秒</div>", unsafe_allow_html=True)
                                 st.markdown("</div>", unsafe_allow_html=True)
                                 
                             with col2:
                                 st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
-                                st.markdown("<div class='metrics-label'>生成耗时</div>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>⚙️ 生成耗时</div>", unsafe_allow_html=True)
                                 st.markdown(f"<div class='metrics-value'>{metrics.get('generation_time', 0):.3f}秒</div>", unsafe_allow_html=True)
                                 st.markdown("</div>", unsafe_allow_html=True)
                                 
                             with col3:
                                 st.markdown("<div class='metrics-card'>", unsafe_allow_html=True)
-                                st.markdown("<div class='metrics-label'>总耗时</div>", unsafe_allow_html=True)
+                                st.markdown("<div class='metrics-label'>🕒 总耗时</div>", unsafe_allow_html=True)
                                 st.markdown(f"<div class='metrics-value'>{metrics.get('total_time', 0):.3f}秒</div>", unsafe_allow_html=True)
                                 st.markdown("</div>", unsafe_allow_html=True)
                 
-                    # 保存到历史记录
-                    if 'history' not in st.session_state:
-                        st.session_state.history = []
-                    
-                    st.session_state.history.append({
-                        "query": query,
-                        "result": result
-                    })
-                    
-                except Exception as e:
-                    st.error(f"处理问题时出错: {str(e)}")
-                    st.exception(e)
+                # 保存到历史记录
+                if 'history' not in st.session_state:
+                    st.session_state.history = []
+                
+                st.session_state.history.append({
+                    "query": query,
+                    "result": result,
+                    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                })
+                
+            except Exception as e:
+                st.error(f"处理问题时出错: {str(e)}")
+                st.exception(e)
 
-    # 显示历史问答记录
-    if st.session_state.get('history'):
-        with st.expander("历史问答记录", expanded=False):
-            for i, item in enumerate(reversed(st.session_state.history)):
-                st.markdown(f"<div class='history-item'>", unsafe_allow_html=True)
-                st.markdown(f"<div class='history-question'>问题 {len(st.session_state.history) - i}：{item['query']}</div>", unsafe_allow_html=True)
+# 显示历史问答记录
+if st.session_state.get('history'):
+    with st.expander("📜 历史问答记录", expanded=False):
+        for i, item in enumerate(reversed(st.session_state.history)):
+            st.markdown(f"<div class='history-item'>", unsafe_allow_html=True)
+            
+            # 添加时间戳和序号
+            timestamp = item.get('timestamp', '')
+            
+            st.markdown(f"""
+            <div style='display:flex; justify-content:space-between; margin-bottom:0.5rem;'>
+                <div class='history-question'>问题 {len(st.session_state.history) - i}：{item['query']}</div>
+                <div style='font-size:0.8rem; color:#6B7280;'>{timestamp}</div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # 只显示回答的前150个字符作为摘要
+            answer = item['result'].get('answer', '无回答')
+            if len(answer) > 150:
+                answer_summary = answer[:150] + "..."
+            else:
+                answer_summary = answer
+            
+            st.markdown(f"<div class='history-answer'>回答：{answer_summary}</div>", unsafe_allow_html=True)
+            
+            # 添加"查看完整回答"按钮
+            if st.button(f"查看完整回答 #{len(st.session_state.history) - i}", key=f"view_{i}"):
+                st.session_state.query = item['query']
+                st.rerun()
                 
-                # 只显示回答的前150个字符作为摘要
-                answer = item['result'].get('answer', '无回答')
-                if len(answer) > 150:
-                    answer_summary = answer[:150] + "..."
-                else:
-                    answer_summary = answer
-                
-                st.markdown(f"<div class='history-answer'>回答：{answer_summary}</div>", unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)
     
     # 页脚
     st.markdown("""
     <div class="footer">
-        政府采购和PPP项目智能问答系统 © 2025 | 基于RAG技术构建
+        <div style="display:flex; justify-content:center; margin-bottom:10px;">
+            <div style="margin:0 10px; font-weight:500;">政府采购和PPP项目智能问答系统</div>
+            <div style="margin:0 10px;">|</div>
+            <div style="margin:0 10px;">© 2025</div>
+        </div>
+        <div style="font-size:0.8rem;">基于检索增强生成(RAG)技术与百度文心一言大模型构建</div>
+        <div style="margin-top:10px; font-size:0.8rem;">湖北省招标股份有限公司</div>
     </div>
     """, unsafe_allow_html=True)
 
