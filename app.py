@@ -626,8 +626,14 @@ def main():
         with col_title2:
             st.markdown("<h3 style='margin:0; font-size:1.3rem; color:#1E40AF;'>请输入您的专业问题</h3>", unsafe_allow_html=True)
         
-        query = st.text_area("", height=120, 
-                           placeholder="例如：什么是政府采购？PPP项目的风险如何控制？政府采购供应商有哪些权利和义务？")
+        # 修复这里的空标签问题，添加标签并隐藏它
+        query = st.text_area(
+            label="问题输入", 
+            value="",
+            height=120,
+            placeholder="例如：什么是政府采购？PPP项目的风险如何控制？政府采购供应商有哪些权利和义务？",
+            label_visibility="collapsed"  # 隐藏标签但保留它以满足无障碍性要求
+        )
         
         col1, col2, col3 = st.columns([3, 3, 2])
         with col1:
