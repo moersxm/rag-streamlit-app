@@ -6,6 +6,8 @@ import faiss
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict, Any
 import time
+import streamlit as st  # 添加streamlit导入
+
 
 class RAGSystem:
     def __init__(self, vector_db_path="vector_db_manual"):
