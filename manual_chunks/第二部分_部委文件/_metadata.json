@@ -1,0 +1,854 @@
+[
+  {
+    "chunk_id": "manual_001",
+    "filename": "001_财政部《政府采购非招标采购方式管理办法》（财政部令第74号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购非招标采购方式管理办法》（财政部令第74号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_002",
+    "filename": "002_财政部《政府采购货物和服务招标投标管理办法》(财政部令第87号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购货物和服务招标投标管理办法》(财政部令第87号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_003",
+    "filename": "003_财政部《政府采购质疑和投诉办法》（财政部令第94号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购质疑和投诉办法》（财政部令第94号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_004",
+    "filename": "004_财政部《政府采购信息发布管理办法》(财政部令第101号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购信息发布管理办法》(财政部令第101号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_005",
+    "filename": "005_财政部《政府购买服务管理办法》（财政部令102号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府购买服务管理办法》（财政部令102号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_006",
+    "filename": "006_财政部《关于公布废止和失效的财政规章和规范性文件目录（第十三批）的决定》（财政部令103号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于公布废止和失效的财政规章和规范性文件目录（第十三批）的决定》（财政部令103号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_007",
+    "filename": "007_财政部《政府采购框架协议采购方式管理暂行办法》（财政部令110号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购框架协议采购方式管理暂行办法》（财政部令110号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_008",
+    "filename": "008_国家计委《招标代理服务收费管理暂行办法》（计价格〔2002〕1980号文件）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家计委《招标代理服务收费管理暂行办法》（计价格〔2002〕1980号文件）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_009",
+    "filename": "009_国家发改委办公厅《关于招标代理服务收费有关问题的通知》（发改办价格〔2003〕857号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委办公厅《关于招标代理服务收费有关问题的通知》（发改办价格〔2003〕857号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_010",
+    "filename": "010_财政部、国家发改委《关于印发节能产品政府采购实施意见的通知》(财库〔2004〕185号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部、国家发改委《关于印发<节能产品政府采购实施意见>的通知》(财库〔2004〕185号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_011",
+    "filename": "011_财政部《关于印发政府采购进口产品管理办法的通知》（财库〔2007〕119号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府采购进口产品管理办法>的通知》（财库〔2007〕119号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_012",
+    "filename": "012_财政部《关于政府采购进口产品管理有关问题的通知》（财办库﹝2008﹞248号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于政府采购进口产品管理有关问题的通知》（财办库﹝2008﹞248号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_013",
+    "filename": "013_工信部_统计局_发改委_财政部《中小企业划型标准规定》（工信部联企业〔2011〕300号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "工信部 统计局 发改委 财政部《中小企业划型标准规定》（工信部联企业〔2011〕300号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_014",
+    "filename": "014_财政部《关于信息系统建设项目采购有关问题的通知》(财库〔2011〕59号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于信息系统建设项目采购有关问题的通知》(财库〔2011〕59号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_015",
+    "filename": "015_国家发改委《关于降低部分建设项目收费标准规范收费行为等有关问题的通知》（发改价格〔2011〕5....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委《关于降低部分建设项目收费标准规范收费行为等有关问题的通知》（发改价格〔2011〕534号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_016",
+    "filename": "016_财政部《关于进一步规范政府采购评审工作有关问题的通知》（财库〔2012〕69号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于进一步规范政府采购评审工作有关问题的通知》（财库〔2012〕69号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_017",
+    "filename": "017_财政部《政府采购竞争性磋商采购方式管理暂行办法》（财库〔2014〕214号）_党中央有关部门，....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府采购竞争性磋商采购方式管理暂行办法》（财库〔2014〕214号） 党中央有关部门，国务院各部委、各直属机构，全国人大常委会办公厅，全国政协办公厅，高法院，高检院，有关人民团体，各省、自治区、直辖市、计划单列市财政厅（局），新疆生产建设兵团财务局，各集中采购机构： 为了深化政府采购制度改革，适应推进政府购买服务、推广政府和社会资本合作（PPP）模式等工作需要，根据《中华人民共和国政府采购法》和有关法律法规，财政部制定了《政府采购竞争性磋商采购方式管理暂行办法》。现印发给你们，请遵照执行。",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_018",
+    "filename": "018_财政部《关于推进和完善服务项目政府采购有关问题的通知》(财库〔2014〕37号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于推进和完善服务项目政府采购有关问题的通知》(财库〔2014〕37号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_019",
+    "filename": "019_财政部_司法部《关于政府采购支持监狱企业发展有关问题的通知》(财库〔2014〕68号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 司法部《关于政府采购支持监狱企业发展有关问题的通知》(财库〔2014〕68号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_020",
+    "filename": "020_财政部《政府和社会资本合作项目政府采购管理办法》（财库〔2014〕215号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《政府和社会资本合作项目政府采购管理办法》（财库〔2014〕215号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_021",
+    "filename": "021_商务部《机电产品国际招标投标实施办法（试行）》（商务部令2014年第1号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "商务部《机电产品国际招标投标实施办法（试行）》（商务部令2014年第1号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_022",
+    "filename": "022_财政部《关于未达到公开招标数额标准政府采购项目采购方式适用等问题的函》（财办库〔2015〕111号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于未达到公开招标数额标准政府采购项目采购方式适用等问题的函》（财办库〔2015〕111号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_023",
+    "filename": "023_财政部《关于政府采购竞争性磋商采购方式管理暂行办法有关问题的补充通知》(财库〔2015〕124号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于政府采购竞争性磋商采购方式管理暂行办法有关问题的补充通知》(财库〔2015〕124号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_024",
+    "filename": "024_财政部《关于做好政府采购信息公开工作的通知》（财库〔2015〕135号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于做好政府采购信息公开工作的通知》（财库〔2015〕135号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_025",
+    "filename": "025_财政部《关于规范政府采购行政处罚有关问题的通知》（财库〔2015〕150号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于规范政府采购行政处罚有关问题的通知》（财库〔2015〕150号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_026",
+    "filename": "026_财政部《关于中华人民共和国政府采购法实施条例第十八条第二款法律适用的函》（财办库〔2015〕2....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于<中华人民共和国政府采购法实施条例>第十八条第二款法律适用的函》（财办库〔2015〕295号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_027",
+    "filename": "027_财政部《关于转发国务院法制办公室对政府采购工程项目法律适用及申领施工许可证问题的答复的通知》(....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于转发国务院法制办公室<对政府采购工程项目法律适用及申领施工许可证问题的答复>的通知》(财办库〔2015〕352号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_028",
+    "filename": "028_《对政府采购工程项目法律适用及申领施工许可证问题的答复》.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《对政府采购工程项目法律适用及申领施工许可证问题的答复》",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_029",
+    "filename": "029_国家发改委《关于进一步放开建设项目专业服务价格的通知》（发改价格〔2015〕299号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委《关于进一步放开建设项目专业服务价格的通知》（发改价格〔2015〕299号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_030",
+    "filename": "030_国家发改委办公厅《公共资源交易平台管理暂行办法》（14部委39号令）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委办公厅《公共资源交易平台管理暂行办法》（14部委39号令）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_031",
+    "filename": "031_财政部中央编办《关于做好事业单位政府购买服务改革工作的意见》（财综〔2016〕53号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部中央编办《关于做好事业单位政府购买服务改革工作的意见》（财综〔2016〕53号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_032",
+    "filename": "032_财政部《关于加强政府采购活动内部控制管理的指导意见》（财库〔2016〕99号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于加强政府采购活动内部控制管理的指导意见》（财库〔2016〕99号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_033",
+    "filename": "033_财政部《关于在政府采购活动中查询及使用信用记录有关问题的通知》（财库〔2016〕125号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于在政府采购活动中查询及使用信用记录有关问题的通知》（财库〔2016〕125号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_034",
+    "filename": "034_财政部《关于完善中央单位政府采购预算管理和中央高校、科研院所科研仪器设备采购管理有关事项的通知....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于完善中央单位政府采购预算管理和中央高校、科研院所科研仪器设备采购管理有关事项的通知》(财库〔2016〕194号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_035",
+    "filename": "035_财政部_交通运输部《关于推进交通运输领域政府购买服务的指导意见》_各省、自治区、直辖市、计划单....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 交通运输部《关于推进交通运输领域政府购买服务的指导意见》 各省、自治区、直辖市、计划单列市财政厅（局）、交通运输厅（局）, 交通运输部部属单位：",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_036",
+    "filename": "036_财政部《关于印发政府采购评审专家管理办法的通知》(财库〔2016〕198号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府采购评审专家管理办法>的通知》(财库〔2016〕198号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_037",
+    "filename": "037_财政部《关于进一步加强政府采购需求和履约验收管理的指导意见》(财库〔2016〕205号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于进一步加强政府采购需求和履约验收管理的指导意见》(财库〔2016〕205号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_038",
+    "filename": "038_财政部《关于对中央预算单位政府采购执行情况实行动态监管的通知》(财办库〔2016〕413号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于对中央预算单位政府采购执行情况实行动态监管的通知》(财办库〔2016〕413号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_039",
+    "filename": "039_财政部《关于简化优化中央预算单位变更政府采购方式和采购进口产品审批审核有关事宜的通知》(财办库....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于简化优化中央预算单位变更政府采购方式和采购进口产品审批审核有关事宜的通知》(财办库〔2016〕416号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_040",
+    "filename": "040_财政部《关于进一步做好中央预算单位批量集中采购有关工作的通知》(财办库〔2016〕425号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于进一步做好中央预算单位批量集中采购有关工作的通知》(财办库〔2016〕425号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_041",
+    "filename": "041_财政部_民政部《关于通过政府购买服务支持社会组织培育发展的指导意见》（财综〔2016〕54号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 民政部《关于通过政府购买服务支持社会组织培育发展的指导意见》（财综〔2016〕54号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_042",
+    "filename": "042_财政部《关于印发财政部政府和社会资本合作（PPP）专家库管理办法的通知》（财金〔2016〕144号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<财政部政府和社会资本合作（PPP）专家库管理办法>的通知》（财金〔2016〕144号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_043",
+    "filename": "043_财政部《关于印发政府和社会资本合作（PPP）综合信息平台信息公开管理暂行办法的通知》（财金〔2....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府和社会资本合作（PPP）综合信息平台信息公开管理暂行办法>的通知》（财金〔2017〕1号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_044",
+    "filename": "044_财政部《关于印发政府和社会资本合作（PPP）咨询机构库管理暂行办法的通知》（财金〔2017〕8号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府和社会资本合作（PPP）咨询机构库管理暂行办法>的通知》（财金〔2017〕8号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_045",
+    "filename": "045_财政部《关于进一步做好政府采购信息公开工作有关事项的通知》（财库〔2017〕86号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于进一步做好政府采购信息公开工作有关事项的通知》（财库〔2017〕86号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_046",
+    "filename": "046_财政部《关于规范政府和社会资本合作（PPP）综合信息平台项目库管理的通知》（财办金〔2017〕....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于规范政府和社会资本合作（PPP）综合信息平台项目库管理的通知》（财办金〔2017〕92号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_047",
+    "filename": "047_财政部_民政部《残疾人联合会关于促进残疾人就业政府采购政策的通知》（财库〔2017〕141号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 民政部《残疾人联合会关于促进残疾人就业政府采购政策的通知》（财库〔2017〕141号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_048",
+    "filename": "048_住房城乡建设部办公厅《关于工程总承包项目和政府采购工程建设项目办理施工许可手续有关事项的通知》....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "住房城乡建设部办公厅《关于工程总承包项目和政府采购工程建设项目办理施工许可手续有关事项的通知》（建办市[2017]46号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_049",
+    "filename": "049_财政部《关于中央预算单位2018年预算执行管理有关问题的通知》（财库〔2017〕207号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于中央预算单位2018年预算执行管理有关问题的通知》（财库〔2017〕207号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_050",
+    "filename": "050_财政部《关于印发政务信息系统政府采购管理暂行办法的通知》(财库〔2017〕210号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政务信息系统政府采购管理暂行办法>的通知》(财库〔2017〕210号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_051",
+    "filename": "051_财政部《关于印发政府采购代理机构管理暂行办法的通知》(财库〔2018〕2号).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府采购代理机构管理暂行办法>的通知》(财库〔2018〕2号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_052",
+    "filename": "052_财政部《关于印发国有金融企业集中采购管理暂行规定的通知》（财金〔2018〕9号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<国有金融企业集中采购管理暂行规定>的通知》（财金〔2018〕9号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_053",
+    "filename": "053_国家发改委《必须招标的工程项目规定》(发改委〔2018〕16号令).txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委《必须招标的工程项目规定》(发改委〔2018〕16号令)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_054",
+    "filename": "054_国家发改委《关于印发必须招标的基础设施和公用事业项目范围规定的通知》（2018.6.6）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国家发改委《关于印发<必须招标的基础设施和公用事业项目范围规定>的通知》（2018.6.6）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_055",
+    "filename": "055_财政部《关于中央预算单位政府集中采购目录及标准有关问题的通知》（财库（2019）2号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于中央预算单位政府集中采购目录及标准有关问题的通知》（财库（2019）2号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_056",
+    "filename": "056_财政部_发展改革委_生态环境部_市场监管总局《关于调整优化节能产品、环境标志产品政府采购执行机....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 发展改革委 生态环境部 市场监管总局《关于调整优化节能产品、环境标志产品政府采购执行机制的通知》（财库〔2019〕9号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_057",
+    "filename": "057_住房和城乡建设部_国家发展改革委《关于印发房屋建筑和市政基础设施项目工程总承包管理办法的通知》....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "住房和城乡建设部 国家发展改革委《关于印发房屋建筑和市政基础设施项目工程总承包管理办法的通知》（建市规〔2019〕12号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_058",
+    "filename": "058_财政部_生态环境部《关于印发环境标志产品政府采购品目清单的通知》（财库〔2019〕18号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 生态环境部《关于印发环境标志产品政府采购品目清单的通知》（财库〔2019〕18号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": true
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_059",
+    "filename": "059_财政部_发展改革委《关于印发节能产品政府采购品目清单的通知》（财库〔2019〕19号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 发展改革委《关于印发节能产品政府采购品目清单的通知》（财库〔2019〕19号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": true
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_060",
+    "filename": "060_财政部《关于促进政府采购公平竞争优化营商环境的通知》（财库〔2019〕38号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于促进政府采购公平竞争优化营商环境的通知》（财库〔2019〕38号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_061",
+    "filename": "061_财政部_国家保密局《关于印发涉密政府采购管理暂行办法的通知》（财库〔2019〕39号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 国家保密局《关于印发<涉密政府采购管理暂行办法>的通知》（财库〔2019〕39号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": true
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_062",
+    "filename": "062_财政部《关于采购人是否有权顺延确定中标或成交供应商等问题的函》（财库便函〔2019〕154号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于采购人是否有权顺延确定中标或成交供应商等问题的函》（财库便函〔2019〕154号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_063",
+    "filename": "063_财政部《关于开展政府采购意向公开工作的通知》（财库〔2020〕10号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于开展政府采购意向公开工作的通知》（财库〔2020〕10号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_064",
+    "filename": "064_财政部《关于印发政府采购公告和公示信息格式规范（2020年版）的通知》（财办库〔2020〕50号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府采购公告和公示信息格式规范（2020年版）>的通知》（财办库〔2020〕50号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_065",
+    "filename": "065_财政部、工信部《关于印发政府采购促进中小企业发展管理办法的通知》（财库〔2020〕46号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部、工信部《关于印发<政府采购促进中小企业发展管理办法>的通知》（财库〔2020〕46号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": true
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_066",
+    "filename": "066_财政部《关于开展政府采购备选库、名录库、资格库专项清理的通知》（财办库〔2021〕14号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于开展政府采购备选库、名录库、资格库专项清理的通知》（财办库〔2021〕14号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_067",
+    "filename": "067_财政部_农业农村部_国家乡村振兴局《关于运用政府采购政策支持乡村产业振兴的通知》（财库〔202....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部 农业农村部 国家乡村振兴局《关于运用政府采购政策支持乡村产业振兴的通知》（财库〔2021〕19号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_068",
+    "filename": "068_财政部《关于印发政府采购需求管理办法的通知》（财库〔2021〕22号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于印发<政府采购需求管理办法>的通知》（财库〔2021〕22号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_069",
+    "filename": "069_财政部《关于组织地方预算单位做好2021年政府采购脱贫地区农副产品工作的通知》（财办库〔202....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于组织地方预算单位做好2021年政府采购脱贫地区农副产品工作的通知》（财办库〔2021〕76号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_070",
+    "filename": "070_财政部《关于中华人民共和国政府采购法实施条例第十九条第一款“较大数额罚款”具体适用问题的意见》....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于<中华人民共和国政府采购法实施条例>第十九条第一款“较大数额罚款”具体适用问题的意见》(财库〔2022〕3号)",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_071",
+    "filename": "071_财政部《关于进一步加大政府采购支持中小企业力度的通知》（财库〔2022〕19号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "财政部《关于进一步加大政府采购支持中小企业力度的通知》（财库〔2022〕19号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "chunk_id": "manual_001",
+    "filename": "001_《中华人民共和国政府采购法》.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《中华人民共和国政府采购法》",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_002",
+    "filename": "002_《中华人民共和国政府采购法实施条例》（国务院令第658号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《中华人民共和国政府采购法实施条例》（国务院令第658号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_003",
+    "filename": "003_《关于修改中华人民共和国招标投标法、中华人民共和国计量法的决定》（主席令第86号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《关于修改<中华人民共和国招标投标法>、<中华人民共和国计量法>的决定》（主席令第86号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_004",
+    "filename": "004_《中华人民共和国招标投标法》（主席令第21号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《中华人民共和国招标投标法》（主席令第21号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_005",
+    "filename": "005_《中华人民共和国招标投标法实施条例》（国务院令第613号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《中华人民共和国招标投标法实施条例》（国务院令第613号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_006",
+    "filename": "006_《中华人民共和国预算法》（2018年修正）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "《中华人民共和国预算法》（2018年修正）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_007",
+    "filename": "007_国务院《关于进一步深化预算管理制度改革的意见》（国发〔2021〕5号）.txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国务院《关于进一步深化预算管理制度改革的意见》（国发〔2021〕5号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  },
+  {
+    "chunk_id": "manual_008",
+    "filename": "008_国务院办公厅《关于印发中央预算单位政府集中采购目录及标准（2020年版）的通知》（国办发〔20....txt",
+    "source": "Unknown Source",
+    "document_title": "Unnamed Document",
+    "section_title": "国务院办公厅《关于印发中央预算单位政府集中采购目录及标准（2020年版）的通知》（国办发〔2019〕55号）",
+    "has_missing_elements": {
+      "missing_images": false,
+      "missing_tables": false
+    },
+    "original_format": "manual"
+  }
+]
