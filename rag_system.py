@@ -38,6 +38,9 @@ class RAGSystem:
         os.makedirs(cache_dir, exist_ok=True)
         
         try:
+            # 注意：这里先导入SentenceTransformer，确保它在后面可用
+            from sentence_transformers import SentenceTransformer
+            
             # 导入torch
             import torch
             
@@ -75,7 +78,7 @@ class RAGSystem:
                 print("尝试备用加载方法...")
                 
                 # 使用不同的模型或更安全的加载方式
-                from sentence_transformers import SentenceTransformer
+                from sentence_transformers import SentenceTransformer  # 再次导入，以防前面的导入失败
                 os.environ["CUDA_VISIBLE_DEVICES"] = ""  # 强制使用CPU
                 
                 # 使用较小的模型，可能会提高成功率
@@ -275,10 +278,12 @@ class RAGSystem:
                 if idx >= 0 and idx < len(self.texts) and self.texts[idx].strip():
                     metadata = self.metadata_list[idx] if idx < len(self.metadata_list) else {}
                     
-                    # 格式化检索结果
+                    # 修改返回结果的结构，使其与_build_prompt方法兼容
                     result = {
                         "content": self.texts[idx],
+                        "text": self.texts[idx],  # 添加text键作为备份
                         "score": float(1 - distances[0][i]),  # 转换为相似度分数
+                        "similarity": float(1 - distances[0][i]),  # 添加similarity键作为备份
                         "title": metadata.get("section_title", os.path.basename(metadata.get("path", ""))),
                         "path": metadata.get("path", "")
                     }
@@ -342,13 +347,29 @@ class RAGSystem:
         prompt = "你是一个专业的政府采购和PPP项目顾问，请基于以下提供的参考文档，回答用户的问题。\n\n"
         
         for i, context in enumerate(contexts):
-            metadata = context["metadata"]
-            title = metadata.get("section_title") or metadata.get("title") or "未知文档"
-            source = metadata.get("path", "未知来源").split("\\")[-1]
+            # 检查context结构，确保我们访问的键确实存在
+            title = "未知文档"
+            source = "未知来源"
             
+            # 直接从context中获取相关信息，不依赖于"metadata"键
+            if "title" in context:
+                title = context["title"]
+            elif "content" in context and isinstance(context["content"], str) and len(context["content"]) > 50:
+                # 使用内容的前50个字符作为标题
+                title = context["content"][:50] + "..."
+                
+            if "path" in context:
+                source_path = context["path"]
+                # 提取文件名作为来源
+                source = os.path.basename(source_path) if source_path else "未知来源"
+            
+            content = context.get("content", "")
+            if not content and "text" in context:
+                content = context["text"]
+                
             prompt += f"参考文档[{i+1}]: {title}\n"
             prompt += f"来源: {source}\n"
-            prompt += f"内容:\n{context['text']}\n\n"
+            prompt += f"内容:\n{content}\n\n"
         
         prompt += f"用户问题: {query}\n\n"
         prompt += "请基于提供的参考文档内容回答用户问题。如果参考文档中没有足够信息回答问题，请明确说明。回答应当专业、准确、简洁，并尽可能引用政策法规依据。"
@@ -362,6 +383,7 @@ class RAGSystem:
         contexts = self.retrieve(query)
         retrieval_time = time.time() - retrieval_start
         
+        # 使用修改后的键名检查
         has_good_match = any(ctx.get("similarity", 0) > 0.3 for ctx in contexts)
         
         if not contexts:
@@ -384,11 +406,12 @@ class RAGSystem:
         
         sources = []
         for context in contexts:
-            metadata = context["metadata"]
+            # 使用直接从context中获取的信息，不依赖于metadata键
             source = {
-                "title": metadata.get("section_title") or metadata.get("title") or "未知标题",
-                "path": metadata.get("path", "未知来源"),
-                "similarity": context["similarity"]
+                "title": context.get("title", "未知标题"),
+                "content": context.get("content", context.get("text", "")),
+                "path": context.get("path", "未知来源"),
+                "similarity": context.get("similarity", context.get("score", 0))
             }
             sources.append(source)
         
